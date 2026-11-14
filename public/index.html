@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HireIQ — AI-Powered Recruitment & ATS</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="brand-section">
+        <a href="/" class="brand-logo">
+          <span>⚡</span> Hire<span>IQ</span>
+        </a>
+        <span class="badge-course">CSE470: Software Engineering</span>
+      </div>
+
+      <nav class="nav-links">
+        <button id="navRecruiter" class="nav-btn active">📊 Recruiter Portal (F2)</button>
+        <button id="navCandidate" class="nav-btn">🌐 Candidate Career View</button>
+      </nav>
+
+      <div class="user-profile">
+        <div class="user-avatar">RS</div>
+        <div class="user-info">
+          <span class="user-name">Rashed Satter</span>
+          <span class="user-role">ID: 24241101 &bull; Recruiter</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+
+    <!-- RECRUITER VIEW (Feature 2 - Job Posting Management) -->
+    <section id="recruiterView">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">📌 Job Posting Management</h1>
+          <p class="page-subtitle">Create, monitor, filter, and manage job openings with weighted skills and automatic deadline tracking.</p>
+        </div>
+        <button id="btnOpenCreate" class="btn-primary">
+          <span>➕</span> Create New Job Posting
+        </button>
+      </div>
+
+      <!-- KPI Metrics Row -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-data">
+            <span class="metric-label">Total Postings</span>
+            <span id="metricTotal" class="metric-value">0</span>
+          </div>
+          <div class="metric-icon-box icon-blue">📋</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-data">
+            <span class="metric-label">Active / Published</span>
+            <span id="metricPublished" class="metric-value">0</span>
+          </div>
+          <div class="metric-icon-box icon-green">🟢</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-data">
+            <span class="metric-label">Paused</span>
+            <span id="metricPaused" class="metric-value">0</span>
+          </div>
+          <div class="metric-icon-box icon-yellow">⏸️</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-data">
+            <span class="metric-label">Closed / Expired</span>
+            <span id="metricClosed" class="metric-value">0</span>
+          </div>
+          <div class="metric-icon-box icon-red">🛑</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-data">
+            <span class="metric-label">Expiring Soon (≤7d)</span>
+            <span id="metricExpiring" class="metric-value">0</span>
+          </div>
+          <div class="metric-icon-box icon-purple">⏱️</div>
+        </div>
+      </div>
+
+      <!-- Filters & Search Toolbar -->
+      <div class="filter-card">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search by title, department, skill, or source tag...">
+        </div>
+
+        <select id="statusFilter" class="filter-select">
+          <option value="All">All Statuses</option>
+          <option value="Published">Published (Active)</option>
+          <option value="Paused">Paused</option>
+          <option value="Closed">Closed</option>
+        </select>
+
+        <select id="departmentFilter" class="filter-select">
+          <option value="All">All Departments</option>
+          <option value="Engineering">Engineering</option>
+          <option value="AI & Data">AI & Data</option>
+          <option value="Design">Design</option>
+          <option value="Human Resources">Human Resources</option>
+          <option value="Product">Product</option>
+          <option value="Marketing">Marketing</option>
+        </select>
+
+        <select id="expFilter" class="filter-select">
+          <option value="All">All Experience Levels</option>
+          <option value="Entry Level">Entry Level</option>
+          <option value="Mid Level">Mid Level</option>
+          <option value="Senior Level">Senior Level</option>
+          <option value="Lead / Manager">Lead / Manager</option>
+        </select>
+
+        <select id="sourceFilter" class="filter-select">
+          <option value="All">All Sources</option>
+          <option value="LinkedIn">LinkedIn</option>
+          <option value="Company Career Page">Company Career Page</option>
+          <option value="BDJobs">BDJobs</option>
+          <option value="Referral">Referral</option>
+        </select>
+      </div>
+
+      <!-- Postings Grid Container -->
+      <div id="postingsContainer" class="postings-grid">
+        <!-- Dynamically rendered via JS -->
+      </div>
+    </section>
+
+    <!-- CANDIDATE VIEW PREVIEW -->
+    <section id="candidateView" style="display: none;">
+      <div class="portal-header-banner">
+        <h1 class="portal-title">Career Opportunities at HireIQ</h1>
+        <p class="portal-tagline">Explore active openings, check required competencies, and take the next step in your professional journey.</p>
+      </div>
+
+      <div id="candidatePostingsContainer" class="postings-grid">
+        <!-- Dynamically rendered via JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Create / Edit Posting Modal -->
+  <div id="postingModal" class="modal-overlay">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="modalTitle" class="modal-title">Create New Job Posting</h3>
+        <button id="btnCloseModal" class="btn-close">&times;</button>
+      </div>
+      <form id="postingForm">
+        <input type="hidden" id="editJobId" value="">
+        <div class="modal-body">
+          <div class="form-grid">
+            
+            <!-- Requisition Link -->
+            <div class="form-group form-full">
+              <label class="form-label" for="requisitionSelect">Link Approved Vacancy Requisition (Optional)</label>
+              <select id="requisitionSelect" class="form-select">
+                <option value="">-- None (Standalone Job Posting) --</option>
+              </select>
+              <span class="form-help">Selecting an approved requisition automatically imports title, department, and budget.</span>
+            </div>
+
+            <!-- Job Title -->
+            <div class="form-group form-full">
+              <label class="form-label" for="jobTitle">Job Title *</label>
+              <input type="text" id="jobTitle" class="form-input" placeholder="e.g. Senior Software Engineer" required>
+            </div>
+
+            <!-- Department -->
+            <div class="form-group">
+              <label class="form-label" for="jobDepartment">Department *</label>
+              <select id="jobDepartment" class="form-select" required>
+                <option value="Engineering">Engineering</option>
+                <option value="AI & Data">AI & Data</option>
+                <option value="Design">Design</option>
+                <option value="Human Resources">Human Resources</option>
+                <option value="Product">Product</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Finance">Finance</option>
+              </select>
+            </div>
+
+            <!-- Experience Level -->
+            <div class="form-group">
+              <label class="form-label" for="jobExpLevel">Experience Level *</label>
+              <select id="jobExpLevel" class="form-select" required>
+                <option value="Entry Level">Entry Level</option>
+                <option value="Mid Level" selected>Mid Level</option>
+                <option value="Senior Level">Senior Level</option>
+                <option value="Lead / Manager">Lead / Manager</option>
+                <option value="Executive">Executive</option>
+              </select>
+            </div>
+
+            <!-- Salary Range -->
+            <div class="form-group">
+              <label class="form-label" for="jobSalary">Salary Range *</label>
+              <input type="text" id="jobSalary" class="form-input" placeholder="e.g. $80,000 - $110,000 or 80k - 120k BDT" required>
+            </div>
+
+            <!-- Source Tag -->
+            <div class="form-group">
+              <label class="form-label" for="jobSource">Source Channel Tag *</label>
+              <select id="jobSource" class="form-select" required>
+                <option value="LinkedIn">LinkedIn</option>
+                <option value="Company Career Page">Company Career Page</option>
+                <option value="BDJobs">BDJobs</option>
+                <option value="Referral">Referral</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <!-- Application Deadline -->
+            <div class="form-group">
+              <label class="form-label" for="jobDeadline">Application Deadline *</label>
+              <input type="date" id="jobDeadline" class="form-input" required>
+              <span class="form-help">Postings automatically close when this deadline arrives.</span>
+            </div>
+
+            <!-- Status -->
+            <div class="form-group">
+              <label class="form-label" for="jobStatus">Initial Status *</label>
+              <select id="jobStatus" class="form-select" required>
+                <option value="Published">Published (Active)</option>
+                <option value="Paused">Paused (Hidden from applicants)</option>
+                <option value="Draft">Draft</option>
+                <option value="Closed">Closed</option>
+              </select>
+            </div>
+
+            <!-- Blind Mode -->
+            <div class="form-group form-full">
+              <label class="checkbox-label">
+                <input type="checkbox" id="jobBlindMode">
+                <span>Enable Blind Screening Mode for this position (Hides candidate identity until shortlisted)</span>
+              </label>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group form-full">
+              <label class="form-label" for="jobDescription">Role Description & Responsibilities</label>
+              <textarea id="jobDescription" class="form-textarea" placeholder="Describe the role overview, expectations, and day-to-day responsibilities..."></textarea>
+            </div>
+
+            <!-- Weighted Required Skills Section -->
+            <div class="form-group form-full">
+              <div class="skills-builder-header">
+                <div>
+                  <label class="form-label">Weighted Required Skills *</label>
+                  <div class="form-help">Assign weights (1-5) used by the AI engine to calculate job-match scores.</div>
+                </div>
+                <button type="button" id="btnAddSkill" class="btn-add-skill">➕ Add Skill</button>
+              </div>
+              <div id="skillsContainer">
+                <!-- Skill rows dynamically added here -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="btnCancelModal" class="btn-secondary">Cancel</button>
+          <button type="submit" class="btn-primary">Save Job Posting</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Job Details Modal -->
+  <div id="detailsModal" class="modal-overlay">
+    <div class="modal-container" style="max-width: 750px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Job Posting Specifications</h3>
+        <button id="btnCloseDetails" class="btn-close">&times;</button>
+      </div>
+      <div id="detailsBody" class="modal-body">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" onclick="document.getElementById('detailsModal').classList.remove('active')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p><strong>HireIQ</strong> &mdash; AI-Powered Recruitment & Applicant Tracking System</p>
+    <p style="margin-top: 0.25rem;">CSE470: Software Engineering Project &bull; Group 10 &bull; Feature F2 (Sprint 1) &bull; MVC Architecture</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
