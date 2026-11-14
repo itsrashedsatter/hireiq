@@ -1,0 +1,46 @@
+[
+  {
+    "id": "REQ-101",
+    "title": "Senior Full Stack Engineer",
+    "department": "Engineering",
+    "headcount": 2,
+    "justification": "Scaling core platform infrastructure and API services.",
+    "budget_range": "$90,000 - $120,000",
+    "status": "Approved",
+    "requested_by": "Alex Morgan (Engineering Manager)",
+    "approved_at": "2026-11-01T10:00:00Z"
+  },
+  {
+    "id": "REQ-102",
+    "title": "Lead UI/UX Designer",
+    "department": "Design",
+    "headcount": 1,
+    "justification": "Redesigning recruiter experience and mobile applicant flows.",
+    "budget_range": "$75,000 - $95,000",
+    "status": "Approved",
+    "requested_by": "Sarah Jenkins (Head of Design)",
+    "approved_at": "2026-11-03T14:30:00Z"
+  },
+  {
+    "id": "REQ-103",
+    "title": "Machine Learning Engineer",
+    "department": "AI & Data",
+    "headcount": 2,
+    "justification": "Developing NLP parsing and candidate job-matching models.",
+    "budget_range": "$100,000 - $135,000",
+    "status": "Approved",
+    "requested_by": "Dr. Rezaul Karim (AI Research Director)",
+    "approved_at": "2026-11-05T09:15:00Z"
+  },
+  {
+    "id": "REQ-104",
+    "title": "Technical Talent Acquisition Specialist",
+    "department": "Human Resources",
+    "headcount": 1,
+    "justification": "Managing high volume pipeline for engineering hires.",
+    "budget_range": "$55,000 - $70,000",
+    "status": "Approved",
+    "requested_by": "Elena Rostova (HR Director)",
+    "approved_at": "2026-11-08T11:45:00Z"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "JOB-1001",
+    "requisition_id": "REQ-101",
+    "title": "Senior Full Stack Engineer",
+    "department": "Engineering",
+    "experience_level": "Senior Level",
+    "salary_range": "$90,000 - $120,000",
+    "source": "LinkedIn",
+    "deadline": "2026-12-10",
+    "status": "Published",
+    "blind_mode": true,
+    "description": "We are seeking a seasoned Senior Full Stack Engineer to build high-performance microservices and dynamic applicant tracking workflows. You will design resilient APIs and collaborate closely with our product and AI teams.",
+    "created_at": "2026-11-02T12:00:00Z",
+    "updated_at": "2026-11-02T12:00:00Z"
+  },
+  {
+    "id": "JOB-1002",
+    "requisition_id": "REQ-102",
+    "title": "Lead UI/UX Designer",
+    "department": "Design",
+    "experience_level": "Lead / Manager",
+    "salary_range": "$75,000 - $95,000",
+    "source": "Company Career Page",
+    "deadline": "2026-11-30",
+    "status": "Published",
+    "blind_mode": false,
+    "description": "Looking for a creative Lead UI/UX Designer with a passion for designing modern, accessible software interfaces. You will lead design systems, conduct user research, and shape the end-to-end recruitment experience.",
+    "created_at": "2026-11-04T15:00:00Z",
+    "updated_at": "2026-11-04T15:00:00Z"
+  },
+  {
+    "id": "JOB-1003",
+    "requisition_id": "REQ-103",
+    "title": "Machine Learning Engineer",
+    "department": "AI & Data",
+    "experience_level": "Mid Level",
+    "salary_range": "$100,000 - $135,000",
+    "source": "BDJobs",
+    "deadline": "2026-12-15",
+    "status": "Paused",
+    "blind_mode": true,
+    "description": "Join our AI research team to develop NLP models, resume parsing systems using spaCy/transformers, and cosine similarity matching algorithms that evaluate candidate profiles accurately.",
+    "created_at": "2026-11-06T10:00:00Z",
+    "updated_at": "2026-11-10T09:00:00Z"
+  },
+  {
+    "id": "JOB-1004",
+    "requisition_id": null,
+    "title": "Junior QA Automation Engineer",
+    "department": "Engineering",
+    "experience_level": "Entry Level",
+    "salary_range": "$40,000 - $55,000",
+    "source": "Referral",
+    "deadline": "2026-11-10",
+    "status": "Published",
+    "blind_mode": false,
+    "description": "Entry-level QA engineer to author automated test suites, execute regression runs, and verify integration points across API microservices.",
+    "created_at": "2026-10-25T08:00:00Z",
+    "updated_at": "2026-10-25T08:00:00Z"
+  }
+]

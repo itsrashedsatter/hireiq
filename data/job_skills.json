@@ -1,0 +1,21 @@
+[
+  { "id": "SKL-1", "job_posting_id": "JOB-1001", "skill_name": "Node.js & Express", "weight": 5 },
+  { "id": "SKL-2", "job_posting_id": "JOB-1001", "skill_name": "React / Frontend Architecture", "weight": 4 },
+  { "id": "SKL-3", "job_posting_id": "JOB-1001", "skill_name": "PostgreSQL / MySQL", "weight": 4 },
+  { "id": "SKL-4", "job_posting_id": "JOB-1001", "skill_name": "REST API & Microservices", "weight": 5 },
+  { "id": "SKL-5", "job_posting_id": "JOB-1001", "skill_name": "Docker & CI/CD", "weight": 3 },
+
+  { "id": "SKL-6", "job_posting_id": "JOB-1002", "skill_name": "Figma & Design Systems", "weight": 5 },
+  { "id": "SKL-7", "job_posting_id": "JOB-1002", "skill_name": "User Research & Usability Testing", "weight": 4 },
+  { "id": "SKL-8", "job_posting_id": "JOB-1002", "skill_name": "Wireframing & Prototyping", "weight": 4 },
+  { "id": "SKL-9", "job_posting_id": "JOB-1002", "skill_name": "HTML & CSS Basics", "weight": 2 },
+
+  { "id": "SKL-10", "job_posting_id": "JOB-1003", "skill_name": "Python & PyTorch", "weight": 5 },
+  { "id": "SKL-11", "job_posting_id": "JOB-1003", "skill_name": "spaCy / NLP Information Extraction", "weight": 5 },
+  { "id": "SKL-12", "job_posting_id": "JOB-1003", "skill_name": "Scikit-Learn & TF-IDF Vectorization", "weight": 4 },
+  { "id": "SKL-13", "job_posting_id": "JOB-1003", "skill_name": "FastAPI", "weight": 3 },
+
+  { "id": "SKL-14", "job_posting_id": "JOB-1004", "skill_name": "JavaScript Testing (Jest/Mocha)", "weight": 4 },
+  { "id": "SKL-15", "job_posting_id": "JOB-1004", "skill_name": "Cypress / Playwright", "weight": 5 },
+  { "id": "SKL-16", "job_posting_id": "JOB-1004", "skill_name": "Git & GitHub Actions", "weight": 3 }
+]
