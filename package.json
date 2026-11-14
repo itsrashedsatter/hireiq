@@ -1,0 +1,24 @@
+{
+  "name": "hireiq",
+  "version": "1.0.0",
+  "description": "HireIQ - AI-Powered Recruitment & Applicant Tracking System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "recruitment",
+    "ats",
+    "applicant-tracking",
+    "job-posting",
+    "mvc",
+    "cse470"
+  ],
+  "author": "Rashed Satter (24241101)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  }
+}
