@@ -3,6 +3,7 @@ const cors = require('cors');
 const path = require('path');
 const jobPostingRoutes = require('./routes/jobPostingRoutes');
 const requisitionRoutes = require('./routes/requisitionRoutes');
+const resumeRoutes = require('./routes/resumeRoutes');
 const JobPosting = require('./models/JobPosting');
 
 const app = express();
@@ -19,6 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // API Routes
 app.use('/api/job-postings', jobPostingRoutes);
 app.use('/api/requisitions', requisitionRoutes);
+app.use('/api/resumes', resumeRoutes); // F4: Resume Parsing & Data Extraction
 
 // System Health & Info
 app.get('/api/health', (req, res) => {
@@ -27,7 +29,11 @@ app.get('/api/health', (req, res) => {
     project: 'HireIQ',
     feature: 'F2: Job Posting Management',
     sprint: 'Sprint 1',
-    author: 'Rashed Satter (24241101)'
+    author: 'Rashed Satter (24241101)',
+    features: [
+      'F2: Job Posting Management (Rashed Satter)',
+      'F4: Resume Parsing & Data Extraction (M M Tariqul Islam Siam)'
+    ]
   });
 });
 
@@ -42,6 +48,11 @@ setInterval(() => {
 
 // Initial check on startup
 JobPosting.checkAndCloseExpired();
+
+// Unknown API routes return JSON instead of the HTML page
+app.use('/api', (req, res) => {
+  res.status(404).json({ success: false, message: 'API endpoint not found' });
+});
 
 // Fallback to frontend index
 app.get('*', (req, res) => {

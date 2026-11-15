@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "test:f4": "node test/test_f4.js",
+    "test:f2": "node test/test_f2.js"
   },
   "keywords": [
     "recruitment",
@@ -18,7 +20,10 @@
   "author": "Rashed Satter (24241101)",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.19.2",
-    "cors": "^2.8.5"
+    "mammoth": "^1.13.0",
+    "multer": "^2.5.0",
+    "pdf-parse": "^2.4.5"
   }
 }

@@ -1,0 +1,811 @@
+[
+  {
+    "id": "RES-1001",
+    "original_filename": "resume_software_engineer.txt",
+    "file_type": "txt",
+    "file_size": 1738,
+    "pages": null,
+    "stored_path": "test/fixtures/resume_software_engineer.txt",
+    "source": "seed",
+    "job_posting_id": "JOB-1001",
+    "status": "Parsed",
+    "manually_corrected": false,
+    "parser_version": "1.0.0",
+    "parsed": {
+      "schema_version": 1,
+      "parser_version": "1.0.0",
+      "contact": {
+        "name": "Nadia Rahman",
+        "email": "nadia.rahman.dev@example.com",
+        "phone": "+8801712345678",
+        "location": "Mirpur 10, Dhaka, Bangladesh",
+        "linkedin": "https://linkedin.com/in/nadia-rahman-dev",
+        "github": "https://github.com/nadiarahman",
+        "portfolio": "https://nadiarahman.vercel.app",
+        "other_links": []
+      },
+      "summary": "Full stack developer with 3+ years of experience building REST APIs and dashboards with Node.js, Express and React. Comfortable with PostgreSQL, Docker and CI/CD pipelines.",
+      "skills": [
+        {
+          "name": "JavaScript",
+          "category": "Programming Language",
+          "mentions": 6,
+          "in_skills_section": true,
+          "confidence": 1
+        },
+        {
+          "name": "Node.js",
+          "category": "Backend",
+          "mentions": 6,
+          "in_skills_section": true,
+          "confidence": 1
+        },
+        {
+          "name": "Express.js",
+          "category": "Backend",
+          "mentions": 4,
+          "in_skills_section": true,
+          "confidence": 1
+        },
+        {
+          "name": "React",
+          "category": "Frontend",
+          "mentions": 4,
+          "in_skills_section": true,
+          "confidence": 1
+        },
+        {
+          "name": "Agile / Scrum",
+          "category": "Methodology",
+          "mentions": 3,
+          "in_skills_section": true,
+          "confidence": 0.9
+        },
+        {
+          "name": "Docker",
+          "category": "DevOps & Cloud",
+          "mentions": 3,
+          "in_skills_section": true,
+          "confidence": 0.9
+        },
+        {
+          "name": "Git",
+          "category": "Tools",
+          "mentions": 3,
+          "in_skills_section": true,
+          "confidence": 0.9
+        },
+        {
+          "name": "AWS",
+          "category": "DevOps & Cloud",
+          "mentions": 2,
+          "in_skills_section": true,
+          "confidence": 0.8
+        },
+        {
+          "name": "CSS",
+          "category": "Frontend",
+          "mentions": 2,
+          "in_skills_section": true,
+          "confidence": 0.8
+        },
+        {
+          "name": "Tailwind CSS",
+          "category": "Frontend",
+          "mentions": 2,
+          "in_skills_section": true,
+          "confidence": 0.8
+        },
+        {
+          "name": "Leadership",
+          "category": "Soft Skill",
+          "mentions": 1,
+          "in_skills_section": true,
+          "confidence": 0.7
+        },
+        {
+          "name": "Next.js",
+          "category": "Frontend",
+          "mentions": 1,
+          "in_skills_section": true,
+          "confidence": 0.7
+        },
+        {
+          "name": "Problem Solving",
+          "category": "Soft Skill",
+          "mentions": 1,
+          "in_skills_section": true,
+          "confidence": 0.7
+        },
+        {
+          "name": "Python",
+          "category": "Programming Language",
+          "mentions": 1,
+          "in_skills_section": true,
+          "confidence": 0.7
+        },
+        {
+          "name": "SQL",
+          "category": "Database",
+          "mentions": 1,
+          "in_skills_section": true,
+          "confidence": 0.7
+        },
+        {
+          "name": "TypeScript",
+          "category": "Programming Language",
+          "mentions": 1,
+          "in_skills_section": true,
+          "confidence": 0.7
+        },
+        {
+          "name": "CI/CD",
+          "category": "DevOps & Cloud",
+          "mentions": 3,
+          "in_skills_section": false,
+          "confidence": 0.6
+        },
+        {
+          "name": "PostgreSQL",
+          "category": "Database",
+          "mentions": 2,
+          "in_skills_section": false,
+          "confidence": 0.5
+        },
+        {
+          "name": "REST API",
+          "category": "Backend",
+          "mentions": 2,
+          "in_skills_section": false,
+          "confidence": 0.5
+        },
+        {
+          "name": "Firebase",
+          "category": "Database",
+          "mentions": 1,
+          "in_skills_section": false,
+          "confidence": 0.4
+        },
+        {
+          "name": "HTML",
+          "category": "Frontend",
+          "mentions": 1,
+          "in_skills_section": false,
+          "confidence": 0.4
+        },
+        {
+          "name": "Microservices",
+          "category": "Backend",
+          "mentions": 1,
+          "in_skills_section": false,
+          "confidence": 0.4
+        },
+        {
+          "name": "MongoDB",
+          "category": "Database",
+          "mentions": 1,
+          "in_skills_section": false,
+          "confidence": 0.4
+        },
+        {
+          "name": "MySQL",
+          "category": "Database",
+          "mentions": 1,
+          "in_skills_section": false,
+          "confidence": 0.4
+        },
+        {
+          "name": "Unit Testing",
+          "category": "Testing & QA",
+          "mentions": 1,
+          "in_skills_section": false,
+          "confidence": 0.4
+        },
+        {
+          "name": "Vercel",
+          "category": "DevOps & Cloud",
+          "mentions": 1,
+          "in_skills_section": false,
+          "confidence": 0.4
+        }
+      ],
+      "unrecognized_skills": [
+        "Postman",
+        "Team Leadership"
+      ],
+      "education": [
+        {
+          "degree": "B.Sc.",
+          "level": "Bachelors",
+          "field": "Computer Science and Engineering",
+          "institution": "BRAC University",
+          "start_year": 2016,
+          "end_year": 2020,
+          "grade": {
+            "value": 3.62,
+            "scale": 4
+          },
+          "is_current": false
+        },
+        {
+          "degree": "HSC",
+          "level": "Higher Secondary",
+          "field": "Science",
+          "institution": "Notre Dame College",
+          "start_year": null,
+          "end_year": 2016,
+          "grade": {
+            "value": 5,
+            "scale": 5
+          },
+          "is_current": false
+        }
+      ],
+      "highest_education": {
+        "degree": "B.Sc.",
+        "level": "Bachelors",
+        "field": "Computer Science and Engineering",
+        "institution": "BRAC University"
+      },
+      "experience": [
+        {
+          "title": "Software Engineer",
+          "company": "Brain Station 23 Ltd",
+          "location": null,
+          "start_date": "2023-01",
+          "end_date": "Present",
+          "is_current": true,
+          "duration_months": 47,
+          "description": [
+            "Built microservices in Node.js and Express serving 50k daily users",
+            "Migrated reporting from MySQL to PostgreSQL and cut query time by 40%",
+            "Set up GitHub Actions CI/CD and Docker based deployments"
+          ]
+        },
+        {
+          "title": "Junior Web Developer",
+          "company": "Pathao Limited",
+          "location": "Dhaka",
+          "start_date": "2021-06",
+          "end_date": "2022-12",
+          "is_current": false,
+          "duration_months": 19,
+          "description": [
+            "Developed React dashboards for the rider operations team",
+            "Wrote unit tests with Jest"
+          ]
+        },
+        {
+          "title": "Freelance Web Developer",
+          "company": "Upwork",
+          "location": null,
+          "start_date": "2020-03",
+          "end_date": "2021-05",
+          "is_current": false,
+          "duration_months": 15,
+          "description": [
+            "Delivered 15+ client websites using HTML, CSS, JavaScript and Firebase"
+          ]
+        }
+      ],
+      "total_experience_years": 6.8,
+      "projects": [
+        "HireBoard – Kanban based job tracker built with React and Express",
+        "ShopBD – E-commerce API with JWT auth and MongoDB"
+      ],
+      "certifications": [
+        "AWS Certified Cloud Practitioner (2023)",
+        "Meta Front-End Developer Certificate"
+      ],
+      "awards": [],
+      "languages": [
+        {
+          "language": "Bengali",
+          "proficiency": "Native"
+        },
+        {
+          "language": "English",
+          "proficiency": "Fluent"
+        }
+      ],
+      "sections_detected": [
+        "summary",
+        "experience",
+        "education",
+        "skills",
+        "projects",
+        "certifications",
+        "languages",
+        "personal"
+      ],
+      "confidence": {
+        "overall": 0.94,
+        "fields": {
+          "name": 0.9,
+          "email": 1,
+          "phone": 0.9,
+          "skills": 1,
+          "education": 0.9,
+          "experience": 0.9
+        }
+      },
+      "warnings": [
+        "Resume contains personal attributes (e.g. date of birth, religion, marital status). These were not extracted and are hidden in blind view."
+      ],
+      "match_input": {
+        "skill_names": [
+          "JavaScript",
+          "Node.js",
+          "Express.js",
+          "React",
+          "Agile / Scrum",
+          "Docker",
+          "Git",
+          "AWS",
+          "CSS",
+          "Tailwind CSS",
+          "Leadership",
+          "Next.js",
+          "Problem Solving",
+          "Python",
+          "SQL",
+          "TypeScript",
+          "CI/CD",
+          "PostgreSQL",
+          "REST API",
+          "Firebase",
+          "HTML",
+          "Microservices",
+          "MongoDB",
+          "MySQL",
+          "Unit Testing",
+          "Vercel"
+        ],
+        "keywords_text": "nadia rahman full stack developer mirpur 10 dhaka bangladesh +880 1712-345678 linkedin.com/in/nadia-rahman-dev github.com/nadiarahman nadiarahman.vercel.app professional summary full stack developer with 3+ years of experience building rest apis and dashboards with node.js express and react. comfortable with postgresql docker and ci/cd pipelines. work experience software engineer brain station 23 ltd jan 2023 present built microservices in node.js and express serving 50k daily users migrated reporting from mysql to postgresql and cut query time by 40 set up github actions ci/cd and docker based deployments junior web developer pathao limited dhaka june 2021 - dec 2022 developed react dashboards for the rider operations team wrote unit tests with jest freelance web developer upwork mar 2020 may 2021 delivered 15+ client websites using html css javascript and firebase education b.sc. in computer science and engineering brac university dhaka 2016 2020 cgpa 3.62 / 4.00 hsc science group notre dame college 2016 gpa 5.00 skills languages javascript typescript python sql frameworks node.js express react next.js tailwind css tools docker git aws postman jira other agile problem solving team leadership projects hireboard kanban based job tracker built with react and express shopbd e-commerce api with jwt auth and mongodb certifications aws certified cloud practitioner 2023 meta front-end developer certificate languages bengali native english fluent personal information"
+      },
+      "stats": {
+        "characters": 1705,
+        "lines": 42
+      },
+      "raw_text": "NADIA RAHMAN\nFull Stack Developer\nMirpur 10, Dhaka, Bangladesh | +880 1712-345678 | nadia.rahman.dev@example.com\nlinkedin.com/in/nadia-rahman-dev | github.com/nadiarahman | nadiarahman.vercel.app\n\nPROFESSIONAL SUMMARY\nFull stack developer with 3+ years of experience building REST APIs and dashboards with Node.js, Express and React. Comfortable with PostgreSQL, Docker and CI/CD pipelines.\n\nWORK EXPERIENCE\nSoftware Engineer | Brain Station 23 Ltd | Jan 2023 – Present\n• Built microservices in Node.js and Express serving 50k daily users\n• Migrated reporting from MySQL to PostgreSQL and cut query time by 40%\n• Set up GitHub Actions CI/CD and Docker based deployments\n\nJunior Web Developer\nPathao Limited, Dhaka\nJune 2021 - Dec 2022\n• Developed React dashboards for the rider operations team\n• Wrote unit tests with Jest\n\nFreelance Web Developer — Upwork\nMar 2020 – May 2021\n• Delivered 15+ client websites using HTML, CSS, JavaScript and Firebase\n\nEDUCATION\nB.Sc. in Computer Science and Engineering\nBRAC University, Dhaka | 2016 – 2020\nCGPA: 3.62 / 4.00\n\nHSC (Science Group), Notre Dame College, 2016, GPA 5.00\n\nSKILLS\nLanguages: JavaScript, TypeScript, Python, SQL\nFrameworks: Node.js, Express, React, Next.js, Tailwind CSS\nTools: Docker, Git, AWS, Postman, Jira\nOther: Agile, Problem Solving, Team Leadership\n\nPROJECTS\n• HireBoard – Kanban based job tracker built with React and Express\n• ShopBD – E-commerce API with JWT auth and MongoDB\n\nCERTIFICATIONS\n• AWS Certified Cloud Practitioner (2023)\n• Meta Front-End Developer Certificate\n\nLANGUAGES\nBengali (Native), English (Fluent)\n\nPERSONAL INFORMATION\nFather's Name: Abdul Rahman\nDate of Birth: 12 March 1998\nReligion: Islam\nMarital Status: Single"
+    },
+    "created_at": "2026-11-08T10:00:00Z",
+    "updated_at": "2026-11-08T10:00:00Z"
+  },
+  {
+    "id": "RES-1002",
+    "original_filename": "resume_ui_designer.docx",
+    "file_type": "docx",
+    "file_size": 36986,
+    "pages": null,
+    "stored_path": "test/fixtures/resume_ui_designer.docx",
+    "source": "seed",
+    "job_posting_id": "JOB-1002",
+    "status": "Parsed",
+    "manually_corrected": false,
+    "parser_version": "1.0.0",
+    "parsed": {
+      "schema_version": 1,
+      "parser_version": "1.0.0",
+      "contact": {
+        "name": "Farhan Hossain Chowdhury",
+        "email": "farhan.designs@example.org",
+        "phone": "+8801819555123",
+        "location": "Chattogram, Bangladesh",
+        "linkedin": null,
+        "github": null,
+        "portfolio": "https://www.behance.net/farhanhc",
+        "other_links": []
+      },
+      "summary": "Product designer focused on accessible interfaces and design systems for SaaS products.",
+      "skills": [
+        {
+          "name": "Design Systems",
+          "category": "Design",
+          "mentions": 3,
+          "in_skills_section": true,
+          "confidence": 0.9
+        },
+        {
+          "name": "Wireframing & Prototyping",
+          "category": "Design",
+          "mentions": 3,
+          "in_skills_section": true,
+          "confidence": 0.9
+        },
+        {
+          "name": "Adobe XD",
+          "category": "Design",
+          "mentions": 2,
+          "in_skills_section": true,
+          "confidence": 0.8
+        },
+        {
+          "name": "Figma",
+          "category": "Design",
+          "mentions": 2,
+          "in_skills_section": true,
+          "confidence": 0.8
+        },
+        {
+          "name": "Adobe Illustrator",
+          "category": "Design",
+          "mentions": 1,
+          "in_skills_section": true,
+          "confidence": 0.7
+        },
+        {
+          "name": "Adobe Photoshop",
+          "category": "Design",
+          "mentions": 1,
+          "in_skills_section": true,
+          "confidence": 0.7
+        },
+        {
+          "name": "CSS",
+          "category": "Frontend",
+          "mentions": 1,
+          "in_skills_section": true,
+          "confidence": 0.7
+        },
+        {
+          "name": "HTML",
+          "category": "Frontend",
+          "mentions": 1,
+          "in_skills_section": true,
+          "confidence": 0.7
+        },
+        {
+          "name": "UI/UX Design",
+          "category": "Design",
+          "mentions": 2,
+          "in_skills_section": false,
+          "confidence": 0.5
+        },
+        {
+          "name": "User Research",
+          "category": "Design",
+          "mentions": 2,
+          "in_skills_section": false,
+          "confidence": 0.5
+        }
+      ],
+      "unrecognized_skills": [
+        "Motion Design",
+        "Storyboarding"
+      ],
+      "education": [
+        {
+          "degree": "BFA",
+          "level": "Bachelors",
+          "field": "Fine Arts",
+          "institution": "University of Chittagong",
+          "start_year": 2015,
+          "end_year": 2019,
+          "grade": null,
+          "is_current": false
+        }
+      ],
+      "highest_education": {
+        "degree": "BFA",
+        "level": "Bachelors",
+        "field": "Fine Arts",
+        "institution": "University of Chittagong"
+      },
+      "experience": [
+        {
+          "title": "Lead UI/UX Designer",
+          "company": "Shohoz Technologies Ltd",
+          "location": null,
+          "start_date": "2022-08",
+          "end_date": "Present",
+          "is_current": true,
+          "duration_months": 52,
+          "description": [
+            "Led a team of 4 designers to build the Shohoz design system in Figma",
+            "Ran user research and usability testing with 60+ riders"
+          ]
+        },
+        {
+          "title": "UI Designer",
+          "company": "Creative IT Studio",
+          "location": null,
+          "start_date": "2020-02",
+          "end_date": "2022-07",
+          "is_current": false,
+          "duration_months": 30,
+          "description": [
+            "Designed wireframes and prototypes for 20+ client apps in Adobe XD"
+          ]
+        }
+      ],
+      "total_experience_years": 6.8,
+      "projects": [],
+      "certifications": [],
+      "awards": [
+        "Best UX, BASIS SoftExpo 2023"
+      ],
+      "languages": [],
+      "sections_detected": [
+        "summary",
+        "experience",
+        "education",
+        "skills",
+        "awards"
+      ],
+      "confidence": {
+        "overall": 0.94,
+        "fields": {
+          "name": 0.9,
+          "email": 1,
+          "phone": 0.9,
+          "skills": 1,
+          "education": 0.9,
+          "experience": 0.9
+        }
+      },
+      "warnings": [],
+      "match_input": {
+        "skill_names": [
+          "Design Systems",
+          "Wireframing & Prototyping",
+          "Adobe XD",
+          "Figma",
+          "Adobe Illustrator",
+          "Adobe Photoshop",
+          "CSS",
+          "HTML",
+          "UI/UX Design",
+          "User Research"
+        ],
+        "keywords_text": "farhan hossain chowdhury ui/ux designer chattogram bangladesh email phone 01819-555123 portfolio career objective product designer focused on accessible interfaces and design systems for saas products. experience lead ui/ux designer at shohoz technologies ltd aug 2022 - present led a team of 4 designers to build the shohoz design system in figma ran user research and usability testing with 60+ riders ui designer creative it studio 02/2020 to 07/2022 designed wireframes and prototypes for 20+ client apps in adobe xd education bachelor of fine arts bfa in graphic design university of chittagong 2015 - 2019 core competencies figma adobe xd photoshop illustrator wireframing prototyping design systems html css motion design storyboarding awards best ux basis softexpo 2023"
+      },
+      "stats": {
+        "characters": 874,
+        "lines": 20
+      },
+      "raw_text": "Farhan Hossain Chowdhury\nUI/UX Designer • Chattogram, Bangladesh\nEmail: farhan.designs@example.org | Phone: 01819-555123 | Portfolio: https://www.behance.net/farhanhc\nCareer Objective\nProduct designer focused on accessible interfaces and design systems for SaaS products.\nExperience\nLead UI/UX Designer at Shohoz Technologies Ltd\nAug 2022 - Present\n\n• Led a team of 4 designers to build the Shohoz design system in Figma\n\n• Ran user research and usability testing with 60+ riders\nUI Designer, Creative IT Studio\n02/2020 to 07/2022\n\n• Designed wireframes and prototypes for 20+ client apps in Adobe XD\nEducation\nBachelor of Fine Arts (BFA) in Graphic Design\nUniversity of Chittagong, 2015 - 2019\nCore Competencies\nFigma, Adobe XD, Photoshop, Illustrator, Wireframing, Prototyping, Design Systems, HTML, CSS, Motion Design, Storyboarding\nAwards\n\n• Best UX, BASIS SoftExpo 2023"
+    },
+    "created_at": "2026-11-09T11:30:00Z",
+    "updated_at": "2026-11-09T11:30:00Z"
+  },
+  {
+    "id": "RES-1003",
+    "original_filename": "resume_ml_engineer.pdf",
+    "file_type": "pdf",
+    "file_size": 2297,
+    "pages": 1,
+    "stored_path": "test/fixtures/resume_ml_engineer.pdf",
+    "source": "seed",
+    "job_posting_id": "JOB-1003",
+    "status": "Parsed",
+    "manually_corrected": false,
+    "parser_version": "1.0.0",
+    "parsed": {
+      "schema_version": 1,
+      "parser_version": "1.0.0",
+      "contact": {
+        "name": "Imran Kabir",
+        "email": "imran.kabir@example.net",
+        "phone": "+14155550199",
+        "location": "Remote",
+        "linkedin": null,
+        "github": "https://github.com/imrankabir-ml",
+        "portfolio": null,
+        "other_links": []
+      },
+      "summary": "ML engineer working on NLP information extraction and ranking systems.",
+      "skills": [
+        {
+          "name": "Natural Language Processing",
+          "category": "AI & Data",
+          "mentions": 5,
+          "in_skills_section": true,
+          "confidence": 1
+        },
+        {
+          "name": "Docker",
+          "category": "DevOps & Cloud",
+          "mentions": 2,
+          "in_skills_section": true,
+          "confidence": 0.8
+        },
+        {
+          "name": "FastAPI",
+          "category": "Backend",
+          "mentions": 2,
+          "in_skills_section": true,
+          "confidence": 0.8
+        },
+        {
+          "name": "Git",
+          "category": "Tools",
+          "mentions": 2,
+          "in_skills_section": true,
+          "confidence": 0.8
+        },
+        {
+          "name": "PyTorch",
+          "category": "AI & Data",
+          "mentions": 2,
+          "in_skills_section": true,
+          "confidence": 0.8
+        },
+        {
+          "name": "Scikit-Learn",
+          "category": "AI & Data",
+          "mentions": 2,
+          "in_skills_section": true,
+          "confidence": 0.8
+        },
+        {
+          "name": "Machine Learning",
+          "category": "AI & Data",
+          "mentions": 4,
+          "in_skills_section": false,
+          "confidence": 0.7
+        },
+        {
+          "name": "NumPy",
+          "category": "AI & Data",
+          "mentions": 1,
+          "in_skills_section": true,
+          "confidence": 0.7
+        },
+        {
+          "name": "Pandas",
+          "category": "AI & Data",
+          "mentions": 1,
+          "in_skills_section": true,
+          "confidence": 0.7
+        },
+        {
+          "name": "Python",
+          "category": "Programming Language",
+          "mentions": 1,
+          "in_skills_section": true,
+          "confidence": 0.7
+        },
+        {
+          "name": "SQL",
+          "category": "Database",
+          "mentions": 1,
+          "in_skills_section": true,
+          "confidence": 0.7
+        },
+        {
+          "name": "TensorFlow",
+          "category": "AI & Data",
+          "mentions": 1,
+          "in_skills_section": true,
+          "confidence": 0.7
+        },
+        {
+          "name": "AWS",
+          "category": "DevOps & Cloud",
+          "mentions": 1,
+          "in_skills_section": false,
+          "confidence": 0.4
+        },
+        {
+          "name": "TF-IDF",
+          "category": "AI & Data",
+          "mentions": 1,
+          "in_skills_section": false,
+          "confidence": 0.4
+        }
+      ],
+      "unrecognized_skills": [],
+      "education": [
+        {
+          "degree": "M.Sc.",
+          "level": "Masters",
+          "field": "Computer Science",
+          "institution": "University of Dhaka",
+          "start_year": 2019,
+          "end_year": 2021,
+          "grade": {
+            "value": 3.81,
+            "scale": 4
+          },
+          "is_current": false
+        },
+        {
+          "degree": "B.Sc.",
+          "level": "Bachelors",
+          "field": "Computer Science and Engineering",
+          "institution": "BRAC University",
+          "start_year": 2015,
+          "end_year": 2019,
+          "grade": null,
+          "is_current": false
+        }
+      ],
+      "highest_education": {
+        "degree": "M.Sc.",
+        "level": "Masters",
+        "field": "Computer Science",
+        "institution": "University of Dhaka"
+      },
+      "experience": [
+        {
+          "title": "Machine Learning Engineer",
+          "company": "DataSoft Systems Bangladesh Ltd.",
+          "location": null,
+          "start_date": "2021-03",
+          "end_date": "Present",
+          "is_current": true,
+          "duration_months": 69,
+          "description": [
+            "Trained spaCy NER models for invoice and resume parsing",
+            "Served PyTorch models with FastAPI and Docker on AWS"
+          ]
+        },
+        {
+          "title": "Research Assistant",
+          "company": "BRAC University",
+          "location": null,
+          "start_date": "2019-09",
+          "end_date": "2021-02",
+          "is_current": false,
+          "duration_months": 18,
+          "description": [
+            "Built TF-IDF and scikit-learn baselines for Bangla text classification"
+          ]
+        }
+      ],
+      "total_experience_years": 7.3,
+      "projects": [],
+      "certifications": [
+        "DeepLearning.AI Natural Language Processing Specialization"
+      ],
+      "awards": [],
+      "languages": [],
+      "sections_detected": [
+        "summary",
+        "experience",
+        "education",
+        "skills",
+        "certifications"
+      ],
+      "confidence": {
+        "overall": 0.94,
+        "fields": {
+          "name": 0.9,
+          "email": 1,
+          "phone": 0.9,
+          "skills": 1,
+          "education": 0.9,
+          "experience": 0.9
+        }
+      },
+      "warnings": [],
+      "match_input": {
+        "skill_names": [
+          "Natural Language Processing",
+          "Docker",
+          "FastAPI",
+          "Git",
+          "PyTorch",
+          "Scikit-Learn",
+          "Machine Learning",
+          "NumPy",
+          "Pandas",
+          "Python",
+          "SQL",
+          "TensorFlow",
+          "AWS",
+          "TF-IDF"
+        ],
+        "keywords_text": "imran kabir machine learning engineer remote +1 415 555-0199 github.com/imrankabir-ml summary ml engineer working on nlp information extraction and ranking systems. experience machine learning engineer - datasoft systems bangladesh ltd. march 2021 - present - trained spacy ner models for invoice and resume parsing - served pytorch models with fastapi and docker on aws research assistant - brac university sep 2019 - feb 2021 - built tf-idf and scikit-learn baselines for bangla text classification education m.sc. in computer science university of dhaka 2019 - 2021 cgpa 3.81/4.00 b.sc. in computer science and engineering brac university 2015 - 2019 technical skills python pytorch tensorflow scikit-learn spacy nlp pandas numpy fastapi docker sql git certifications - deeplearning.ai natural language processing specialization"
+      },
+      "stats": {
+        "characters": 883,
+        "lines": 18
+      },
+      "raw_text": "Imran Kabir\nMachine Learning Engineer | Remote | +1 (415) 555-0199 | imran.kabir@example.net\ngithub.com/imrankabir-ml\nSUMMARY\nML engineer working on NLP information extraction and ranking systems.\nEXPERIENCE\nMachine Learning Engineer - DataSoft Systems Bangladesh Ltd. (March 2021 - Present)\n- Trained spaCy NER models for invoice and resume parsing\n- Served PyTorch models with FastAPI and Docker on AWS\nResearch Assistant - BRAC University (Sep 2019 - Feb 2021)\n- Built TF-IDF and scikit-learn baselines for Bangla text classification\nEDUCATION\nM.Sc. in Computer Science, University of Dhaka, 2019 - 2021, CGPA 3.81/4.00\nB.Sc. in Computer Science and Engineering, BRAC University, 2015 - 2019\nTECHNICAL SKILLS\nPython, PyTorch, TensorFlow, scikit-learn, spaCy, NLP, Pandas, NumPy, FastAPI, Docker, SQL, Git\nCERTIFICATIONS\n- DeepLearning.AI Natural Language Processing Specialization"
+    },
+    "created_at": "2026-11-10T09:15:00Z",
+    "updated_at": "2026-11-10T09:15:00Z"
+  }
+]

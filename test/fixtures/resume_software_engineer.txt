@@ -1,0 +1,53 @@
+NADIA RAHMAN
+Full Stack Developer
+Mirpur 10, Dhaka, Bangladesh | +880 1712-345678 | nadia.rahman.dev@example.com
+linkedin.com/in/nadia-rahman-dev | github.com/nadiarahman | nadiarahman.vercel.app
+
+PROFESSIONAL SUMMARY
+Full stack developer with 3+ years of experience building REST APIs and dashboards with Node.js, Express and React. Comfortable with PostgreSQL, Docker and CI/CD pipelines.
+
+WORK EXPERIENCE
+Software Engineer | Brain Station 23 Ltd | Jan 2023 – Present
+• Built microservices in Node.js and Express serving 50k daily users
+• Migrated reporting from MySQL to PostgreSQL and cut query time by 40%
+• Set up GitHub Actions CI/CD and Docker based deployments
+
+Junior Web Developer
+Pathao Limited, Dhaka
+June 2021 - Dec 2022
+• Developed React dashboards for the rider operations team
+• Wrote unit tests with Jest
+
+Freelance Web Developer — Upwork
+Mar 2020 – May 2021
+• Delivered 15+ client websites using HTML, CSS, JavaScript and Firebase
+
+EDUCATION
+B.Sc. in Computer Science and Engineering
+BRAC University, Dhaka | 2016 – 2020
+CGPA: 3.62 / 4.00
+
+HSC (Science Group), Notre Dame College, 2016, GPA 5.00
+
+SKILLS
+Languages: JavaScript, TypeScript, Python, SQL
+Frameworks: Node.js, Express, React, Next.js, Tailwind CSS
+Tools: Docker, Git, AWS, Postman, Jira
+Other: Agile, Problem Solving, Team Leadership
+
+PROJECTS
+• HireBoard – Kanban based job tracker built with React and Express
+• ShopBD – E-commerce API with JWT auth and MongoDB
+
+CERTIFICATIONS
+• AWS Certified Cloud Practitioner (2023)
+• Meta Front-End Developer Certificate
+
+LANGUAGES
+Bengali (Native), English (Fluent)
+
+PERSONAL INFORMATION
+Father's Name: Abdul Rahman
+Date of Birth: 12 March 1998
+Religion: Islam
+Marital Status: Single

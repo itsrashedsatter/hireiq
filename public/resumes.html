@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HireIQ — Resume Parsing & Data Extraction</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/resumes.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="brand-section">
+        <a href="/" class="brand-logo">
+          <span>⚡</span> Hire<span>IQ</span>
+        </a>
+        <span class="badge-course">CSE470: Software Engineering</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="/" class="nav-btn nav-link">📊 Job Postings (F2)</a>
+        <a href="/resumes.html" class="nav-btn nav-link active">📄 Resume Parser (F4)</a>
+      </nav>
+
+      <div class="user-profile">
+        <div class="user-avatar">TS</div>
+        <div class="user-info">
+          <span class="user-name">M M Tariqul Islam Siam</span>
+          <span class="user-role">ID: 23101118 &bull; Recruiter</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">📄 Resume Parsing & Data Extraction</h1>
+        <p class="page-subtitle">Upload resumes (PDF, DOCX, TXT) and extract contact details, skills, education and experience into structured candidate data.</p>
+      </div>
+    </div>
+
+    <!-- Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-data">
+          <span class="metric-label">Resumes Parsed</span>
+          <span id="metricTotal" class="metric-value">0</span>
+        </div>
+        <div class="metric-icon-box icon-blue">📄</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-data">
+          <span class="metric-label">Auto-Parsed</span>
+          <span id="metricParsed" class="metric-value">0</span>
+        </div>
+        <div class="metric-icon-box icon-green">🤖</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-data">
+          <span class="metric-label">Needs Review</span>
+          <span id="metricReview" class="metric-value">0</span>
+        </div>
+        <div class="metric-icon-box icon-yellow">🔎</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-data">
+          <span class="metric-label">Recruiter Verified</span>
+          <span id="metricVerified" class="metric-value">0</span>
+        </div>
+        <div class="metric-icon-box icon-purple">✅</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-data">
+          <span class="metric-label">Avg. Confidence</span>
+          <span id="metricConfidence" class="metric-value">0%</span>
+        </div>
+        <div class="metric-icon-box icon-red">🎯</div>
+      </div>
+    </div>
+
+    <!-- Upload Panel -->
+    <section class="upload-panel">
+      <div class="upload-tabs" role="tablist">
+        <button class="upload-tab active" data-mode="file" role="tab">⬆️ Upload File</button>
+        <button class="upload-tab" data-mode="text" role="tab">📝 Paste Text</button>
+      </div>
+
+      <div class="upload-body">
+        <div id="fileMode">
+          <label id="dropZone" class="drop-zone" for="fileInput">
+            <input type="file" id="fileInput" accept=".pdf,.docx,.txt" hidden>
+            <span class="drop-icon">📂</span>
+            <span class="drop-title">Drop a resume here or <u>browse</u></span>
+            <span class="drop-hint">PDF, DOCX or TXT &bull; max 5 MB</span>
+            <span id="selectedFile" class="drop-file"></span>
+          </label>
+        </div>
+
+        <div id="textMode" style="display: none;">
+          <textarea id="resumeText" class="form-textarea paste-area" placeholder="Paste the full resume text here (at least 50 characters)..."></textarea>
+        </div>
+
+        <div class="upload-actions">
+          <div class="form-group upload-job">
+            <label class="form-label" for="uploadJob">Applying for (optional)</label>
+            <select id="uploadJob" class="form-select">
+              <option value="">-- Not linked to a job posting --</option>
+            </select>
+          </div>
+          <button id="btnParse" class="btn-primary" disabled>
+            <span>⚙️</span> <span id="btnParseLabel">Parse Resume</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <div class="filter-card">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search by name, email, skill, institution or company...">
+      </div>
+      <select id="statusFilter" class="filter-select">
+        <option value="All">All Statuses</option>
+        <option value="Parsed">Parsed</option>
+        <option value="Needs Review">Needs Review</option>
+        <option value="Verified">Verified</option>
+      </select>
+      <select id="jobFilter" class="filter-select">
+        <option value="All">All Job Postings</option>
+      </select>
+      <select id="expFilter" class="filter-select">
+        <option value="">Any Experience</option>
+        <option value="1">1+ years</option>
+        <option value="3">3+ years</option>
+        <option value="5">5+ years</option>
+      </select>
+    </div>
+
+    <div id="resumesContainer" class="postings-grid"></div>
+  </main>
+
+  <!-- Resume Details Modal -->
+  <div id="detailsModal" class="modal-overlay">
+    <div class="modal-container resume-modal">
+      <div class="modal-header">
+        <div>
+          <h3 id="detailsTitle" class="modal-title">Parsed Resume</h3>
+          <span id="detailsSubtitle" class="details-subtitle"></span>
+        </div>
+        <div class="modal-header-actions">
+          <label class="blind-toggle" title="Preview what reviewers see in Blind Screening Mode (F7)">
+            <input type="checkbox" id="blindToggle"> 🙈 Blind view
+          </label>
+          <button id="btnCloseDetails" class="btn-close">&times;</button>
+        </div>
+      </div>
+
+      <div class="detail-tabs" role="tablist">
+        <button class="detail-tab active" data-tab="overview">Overview</button>
+        <button class="detail-tab" data-tab="edit">✏️ Review & Correct</button>
+        <button class="detail-tab" data-tab="raw">Extracted Text</button>
+        <button class="detail-tab" data-tab="json">JSON (for F5)</button>
+      </div>
+
+      <div id="detailsBody" class="modal-body"></div>
+
+      <div class="modal-footer details-footer">
+        <div class="footer-left">
+          <button id="btnDelete" class="btn-card btn-card-danger">🗑️ Delete</button>
+          <button id="btnReparse" class="btn-card">🔄 Re-parse</button>
+          <a id="btnDownload" class="btn-card" href="#" download>⬇️ Original file</a>
+        </div>
+        <button id="btnSave" class="btn-primary" style="display: none;">💾 Save & Mark Verified</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="toast-container"></div>
+
+  <footer class="footer">
+    <p><strong>HireIQ</strong> &mdash; AI-Powered Recruitment & Applicant Tracking System</p>
+    <p style="margin-top: 0.25rem;">CSE470: Software Engineering Project &bull; Group 10 &bull; Feature F4 (Sprint 1): Resume Parsing & Data Extraction &bull; MVC Architecture</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/resumeApi.js"></script>
+  <script src="js/resumes.js"></script>
+</body>
+</html>

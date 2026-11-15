@@ -12,9 +12,9 @@
 | Student ID | Name | Role / Focus | GitHub Profile |
 | :---: | :---: | :---: | :---: |
 | **24241101** | **Rashed Satter** | **Member 4 (Sprint 1: F2)** | [@itsrashedsatter](https://github.com/itsrashedsatter) |
-| 24301191 | Saad Bin Shadi Srabon | Member 3 | [@NeatChain9-coder](https://github.com/NeatChain9-coder) |
-| 22301510 | Mehrab Arefin | Member 1 | [@Mehrab-Arefin](https://github.com/Mehrab-Arefin) |
-| 23101118 | M M Tariqul Islam Siam | Member 2 | [@siamknowsnothing](https://github.com/siamknowsnothing) |
+| 24301191 | Saad Bin Shadi Srabon | Member 3 | [@saadbinshadi](https://github.com) |
+| 22301510 | Mehrab Arefin | Member 1 | [@mehrabarefin](https://github.com) |
+| 23101118 | M M Tariqul Islam Siam | Member 2 | [@tariqulislam](https://github.com) |
 
 ---
 
@@ -94,26 +94,41 @@ hireiq/
 ├── data/
 │   ├── requisitions.json         # Vacancy requisition records
 │   ├── job_postings.json         # Job postings records
-│   └── job_skills.json           # Weighted required skills records
+│   ├── job_skills.json           # Weighted required skills records
+│   ├── resumes.json              # F4: Parsed resume records (seeded with 3 samples)
+│   └── skills_taxonomy.json      # F4: Canonical skills + aliases used for skill extraction
 ├── models/
 │   ├── JobPosting.js             # Model: CRUD, filtering, search, auto-deadline closing
 │   ├── JobSkill.js               # Model: Weighted required skills (weights 1 to 5)
-│   └── Requisition.js            # Model: Approved requisitions linking
+│   ├── Requisition.js            # Model: Approved requisitions linking
+│   └── Resume.js                 # F4 Model: Store, filter, correct, re-parse resumes
+├── services/
+│   ├── textExtractor.js          # F4: PDF / DOCX / TXT → plain text
+│   └── resumeParser.js           # F4: Information-extraction engine (contact, skills, education, experience)
 ├── controllers/
 │   ├── jobPostingController.js   # Controller: Business logic, validation, status transitions
-│   └── requisitionController.js  # Controller: Requisition lookup & link
+│   ├── requisitionController.js  # Controller: Requisition lookup & link
+│   └── resumeController.js       # F4 Controller: Upload/parse validation & responses
 ├── routes/
 │   ├── jobPostingRoutes.js       # Routes: /api/job-postings
-│   └── requisitionRoutes.js      # Routes: /api/requisitions
+│   ├── requisitionRoutes.js      # Routes: /api/requisitions
+│   └── resumeRoutes.js           # F4 Routes: /api/resumes (multipart upload via multer)
 ├── public/
 │   ├── index.html                # View: Recruiter Job Posting Management & Candidate Portal View
+│   ├── resumes.html              # F4 View: Resume upload, parsed data, review & correct
 │   ├── css/
-│   │   └── styles.css            # View: Responsive styling and UI components
+│   │   ├── styles.css            # View: Responsive styling and UI components
+│   │   └── resumes.css           # F4 View: Resume parser page styles
 │   └── js/
 │       ├── api.js                # View/Helper: Frontend API service
-│       └── app.js                # View/Helper: Reactive UI, modals, dynamic skills builder
+│       ├── app.js                # View/Helper: Reactive UI, modals, dynamic skills builder
+│       ├── resumeApi.js          # F4 View/Helper: Resume API service
+│       └── resumes.js            # F4 View/Helper: Upload, details modal, corrections
+├── uploads/                      # F4: Uploaded resume files (git-ignored, created at runtime)
 └── test/
-    └── test_f2.js                # Automated verification suite for F2
+    ├── test_f2.js                # Automated verification suite for F2
+    ├── test_f4.js                # Automated verification suite for F4 (77 checks)
+    └── fixtures/                 # F4: Sample resumes (TXT, DOCX, PDF) with fictional data
 ```
 
 - **Models (`models/`)**: Encapsulate data access, schema validation, and lifecycle operations. Includes automatic checking and updating of postings that have reached their deadline date.
@@ -144,10 +159,75 @@ hireiq/
 
 ---
 
+## Feature 4 (Sprint 1) Highlights: Resume Parsing & Data Extraction
+
+*Owner: M M Tariqul Islam Siam (23101118)* · UI: `http://localhost:3000/resumes.html`
+
+1. **Multi-format Upload**:
+   - Recruiters upload **PDF, DOCX or TXT** resumes (max 5 MB) by drag-and-drop, or paste resume text.
+   - Text is extracted with `pdf-parse` (PDF) and `mammoth` (DOCX, keeping list bullets). Legacy `.doc`, images and corrupt files are rejected with a clear message.
+   - A resume can optionally be linked to the job posting it was submitted for (F2).
+2. **Rule-based NLP Information Extraction** (`services/resumeParser.js`):
+   - **Section segmentation** — recognises ~80 heading variants (Summary, Experience, Education, Skills, Projects, Certifications, …).
+   - **Contact** — name, email, phone (Bangladeshi numbers normalised to `+880…`), location, LinkedIn, GitHub and portfolio links.
+   - **Skills** — dictionary (gazetteer) matching against `data/skills_taxonomy.json` (106 canonical skills with aliases, e.g. `nodejs` → `Node.js`). Each skill records its category, mention count and whether it was listed in the Skills section. Unknown items are kept as *unrecognized skills* for review.
+   - **Education** — degree and level (SSC/HSC/O-A Level → PhD), field of study, institution, years and CGPA with scale.
+   - **Experience** — job title vs. company classification, date ranges in many formats (`Jan 2023 – Present`, `02/2020 to 07/2022`, `2019 - 2021`), duration per role, and **total years of experience with overlapping jobs merged**.
+3. **Confidence Scoring & Review Queue**:
+   - Every field gets a confidence score; overall confidence below **60%** puts the resume in **Needs Review**.
+   - Warnings explain problems (e.g. no email found, likely scanned image).
+4. **Recruiter Review & Correction**:
+   - Recruiters can fix contact details, skills (with taxonomy autocomplete), experience and education. Saving marks the resume **Verified**.
+   - **Re-parse** re-runs the engine on the original file (e.g. after improving the parser); the original file can be downloaded.
+5. **Bias-aware by design**:
+   - Personal attributes common in local CVs (date of birth, religion, marital status, father's name, etc.) are **never extracted** into structured fields and are excluded from matching text.
+   - `GET /api/resumes/:id?view=blind` returns a redacted profile (name, contact, pronouns and personal-attribute lines removed) — the integration point for **F7 Blind Screening**.
+6. **Stable output contract for later features**:
+   - Every parsed resume follows `schema_version: 1` and includes `match_input.skill_names` and `match_input.keywords_text`, ready for **F5 TF-IDF matching**, **F6 ranking** and **F15 talent-pool re-matching**.
+
+### F4 API Endpoints
+
+| Method | Endpoint | Description |
+| ------ | -------- | ----------- |
+| `POST` | `/api/resumes/upload` | Upload a file (`multipart/form-data`, field `resume`, optional `job_posting_id`) and parse it |
+| `POST` | `/api/resumes/parse-text` | Parse pasted text `{ text, job_posting_id? }` |
+| `GET` | `/api/resumes` | List parsed resumes. Filters: `search`, `skill`, `status`, `job_posting_id`, `min_experience` |
+| `GET` | `/api/resumes/metrics` | Totals by status, average confidence, top skills |
+| `GET` | `/api/resumes/skills/taxonomy` | Canonical skill list |
+| `GET` | `/api/resumes/:id` | Full parsed record (`?view=blind` for redacted view) |
+| `GET` | `/api/resumes/:id/file` | Download the original file |
+| `PUT` | `/api/resumes/:id` | Save recruiter corrections (marks `Verified`) |
+| `POST` | `/api/resumes/:id/reparse` | Re-run the parser on the original |
+| `DELETE` | `/api/resumes/:id` | Delete the record and its uploaded file |
+
+### Parsed Resume Schema (v1, abridged)
+
+```json
+{
+  "schema_version": 1,
+  "contact": { "name": "", "email": "", "phone": "", "location": "", "linkedin": "", "github": "", "portfolio": "" },
+  "summary": "",
+  "skills": [{ "name": "Node.js", "category": "Backend", "mentions": 6, "in_skills_section": true, "confidence": 1 }],
+  "unrecognized_skills": ["Postman"],
+  "education": [{ "degree": "B.Sc.", "level": "Bachelors", "field": "Computer Science and Engineering", "institution": "BRAC University", "start_year": 2016, "end_year": 2020, "grade": { "value": 3.62, "scale": 4 } }],
+  "highest_education": { "degree": "B.Sc.", "level": "Bachelors" },
+  "experience": [{ "title": "Software Engineer", "company": "Brain Station 23 Ltd", "start_date": "2023-01", "end_date": "Present", "duration_months": 47, "description": [] }],
+  "total_experience_years": 6.8,
+  "projects": [], "certifications": [], "awards": [], "languages": [],
+  "confidence": { "overall": 0.94, "fields": { "name": 0.9, "email": 1, "skills": 1 } },
+  "warnings": [],
+  "match_input": { "skill_names": ["Node.js"], "keywords_text": "..." }
+}
+```
+
+> **Limitations:** scanned/image-only PDFs need OCR (not included; they are flagged with a warning), and the rule-based extractor works best with English resumes that use common section headings. Low-confidence results are routed to the review queue instead of being trusted blindly.
+
+---
+
 ## Getting Started
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (v18.x, v20.x, or v24.x)
+- [Node.js](https://nodejs.org/) v20.16+ or v22.3+ (required by the PDF parser used in F4)
 - npm (v9.x or higher)
 
 ### Installation & Launch
@@ -173,6 +253,11 @@ http://localhost:3000
 node test/test_f2.js
 ```
 The automated test suite verifies health checks, metrics, approved requisition fetching, posting creation, weighted skills persistence, search by skill, status updates, and deadline auto-close logic.
+
+```bash
+npm run test:f4   # or: node test/test_f4.js
+```
+The F4 suite (77 checks) covers the parser engine (contact, skills, education, experience, overlap-merged experience totals, privacy/blind redaction, low-confidence handling) and the REST API (PDF/DOCX/TXT upload, validation errors, filters, blind view, corrections, re-parse, download and delete). It restores `data/resumes.json` and removes uploaded files when it finishes.
 
 ---
 
