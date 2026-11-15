@@ -12,8 +12,8 @@
 | Student ID | Name | Role / Focus | GitHub Profile |
 | :---: | :---: | :---: | :---: |
 | **24241101** | **Rashed Satter** | **Member 4 (Sprint 1: F2)** | [@itsrashedsatter](https://github.com/itsrashedsatter) |
-| 24301191 | Saad Bin Shadi Srabon | Member 3 | [@NeatChain9-coder](https://github.com/NeatChain9-coder) |
-| 22301510 | Mehrab Arefin | Member 1 | [@Mehrab-Arefin](https://github.com/Mehrab-Arefin) |
+| 24301191 | Saad Bin Shadi Srabon | Member 1 | [@NeatChain9-coder](https://github.com/NeatChain9-coder) |
+| 22301510 | Mehrab Arefin | Member 3 | [@Mehrab-Arefin](https://github.com/Mehrab-Arefin) |
 | 23101118 | M M Tariqul Islam Siam | Member 2 | [@siamknowsnothing](https://github.com/siamknowsnothing) |
 
 ---
