@@ -197,8 +197,8 @@ npm start
 ```
 
 Open your browser and navigate to:
-- Recruiter Job Posting Portal: `http://localhost:3000`
-- Email Engine & Audit Dashboard: `http://localhost:3000/email-manager.html`
+- Recruiter Job Posting Portal: `http://localhost:8000`
+- Email Engine & Audit Dashboard: `http://localhost:8000/email-manager.html`
 
 ### Running Automated Verification Tests
 ```bash
