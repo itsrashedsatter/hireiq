@@ -1,0 +1,323 @@
+[
+  {
+    "id": "EML-1001",
+    "template_key": "application_received",
+    "recipient_email": "tahmid.hassan@example.com",
+    "recipient_name": "Tahmid Hassan",
+    "subject": "Application Received: Senior Full-Stack Engineer at HireIQ Tech",
+    "body_html": "<p>Dear Tahmid, your application has been received...</p>",
+    "status": "Sent",
+    "attempts": 1,
+    "max_attempts": 3,
+    "error_message": null,
+    "sent_at": "2026-11-15T09:30:15.000Z",
+    "created_at": "2026-11-15T09:30:12.000Z",
+    "metadata": {
+      "job_id": "JOB-1001",
+      "application_id": "APP-9081"
+    }
+  },
+  {
+    "id": "EML-1002",
+    "template_key": "candidate_shortlisted",
+    "recipient_email": "nusrat.jahan@example.com",
+    "recipient_name": "Nusrat Jahan",
+    "subject": "Great News! You've been shortlisted for AI Research Scientist at HireIQ Tech",
+    "body_html": "<p>Dear Nusrat, congratulations on being shortlisted...</p>",
+    "status": "Sent",
+    "attempts": 1,
+    "max_attempts": 3,
+    "error_message": null,
+    "sent_at": "2026-11-15T11:15:00.000Z",
+    "created_at": "2026-11-15T11:14:50.000Z",
+    "metadata": {
+      "job_id": "JOB-1002",
+      "match_score": 92
+    }
+  },
+  {
+    "id": "EML-1003",
+    "template_key": "interview_invite",
+    "recipient_email": "invalid-address@unreachable-domain-xyz.com",
+    "recipient_name": "Tanvir Rahman",
+    "subject": "Interview Scheduled: Product Designer - Round 1",
+    "body_html": "<p>Dear Tanvir, interview scheduled on 2026-11-20...</p>",
+    "status": "Failed",
+    "attempts": 3,
+    "max_attempts": 3,
+    "error_message": "SMTP Connection Error: Domain unreachable (MX record resolution failure).",
+    "sent_at": null,
+    "created_at": "2026-11-15T14:40:00.000Z",
+    "metadata": {
+      "job_id": "JOB-1003",
+      "interview_date": "2026-11-20"
+    }
+  },
+  {
+    "id": "EML-1004",
+    "template_key": "offer_letter",
+    "recipient_email": "farhana.akter@example.com",
+    "recipient_name": "Farhana Akter",
+    "subject": "Formal Offer of Employment: Frontend Specialist at HireIQ Tech",
+    "body_html": "<p>Dear Farhana, we are thrilled to offer you the position...</p>",
+    "status": "Sent",
+    "attempts": 1,
+    "max_attempts": 3,
+    "error_message": null,
+    "sent_at": "2026-11-16T10:05:00.000Z",
+    "created_at": "2026-11-16T10:04:55.000Z",
+    "metadata": {
+      "job_id": "JOB-1001",
+      "salary": "$95,000"
+    }
+  },
+  {
+    "id": "EML-1005",
+    "template_key": "weekly_hr_digest",
+    "recipient_email": "hr-management@hireiq.org",
+    "recipient_name": "HR Operations Committee",
+    "subject": "HireIQ Weekly Recruitment Digest - 2026-W46",
+    "body_html": "<p>Weekly metrics digest...</p>",
+    "status": "Sent",
+    "attempts": 1,
+    "max_attempts": 3,
+    "error_message": null,
+    "sent_at": "2026-11-16T11:00:00.000Z",
+    "created_at": "2026-11-16T10:59:45.000Z",
+    "metadata": {
+      "report_week": "2026-W46",
+      "active_jobs": 4
+    }
+  },
+  {
+    "id": "EML-1006",
+    "template_key": "application_received",
+    "recipient_email": "candidate.student@bracu.ac.bd",
+    "recipient_name": "Sadia Sultana",
+    "subject": "Application Received: {{job_title}} at HireIQ Systems",
+    "body_html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;\">\n  <div style=\"text-align: center; margin-bottom: 24px;\">\n    <h2 style=\"color: #1e3a8a; margin: 0;\">HireIQ Recruitment</h2>\n    <p style=\"color: #64748b; margin: 4px 0 0 0; font-size: 14px;\">Candidate Notification System</p>\n  </div>\n  <p>Dear <strong>Sadia Sultana</strong>,</p>\n  <p>Thank you for applying for the position of <strong>{{job_title}}</strong> at <strong>HireIQ Systems</strong>.</p>\n  <p>We have successfully received your application (Application ID: <code>{{application_id}}</code>). Our recruitment team is currently reviewing your profile and credentials.</p>\n  <div style=\"background-color: #f1f5f9; padding: 16px; border-radius: 6px; margin: 20px 0;\">\n    <p style=\"margin: 0; font-size: 14px; color: #334155;\"><strong>What happens next?</strong><br>Our hiring team and automated matching engine will evaluate your qualifications against the role requirements. If your profile matches, we will reach out regarding the next steps in our hiring process.</p>\n  </div>\n  <p>You can track the live status of your application anytime by visiting your candidate portal:</p>\n  <div style=\"text-align: center; margin: 24px 0;\">\n    <a href=\"https://hireiq.careers/status\" style=\"background-color: #2563eb; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;\">View Application Status</a>\n  </div>\n  <p style=\"color: #64748b; font-size: 13px; margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 16px;\">Best regards,<br>Talent Acquisition Team<br><strong>HireIQ Systems</strong></p>\n</div>",
+    "status": "Sent",
+    "attempts": 1,
+    "max_attempts": 3,
+    "error_message": null,
+    "sent_at": "2026-11-16T14:22:35.144Z",
+    "created_at": "2026-11-16T14:22:35.141Z",
+    "metadata": {
+      "is_test_dispatch": true,
+      "template_name": "Application Confirmation",
+      "category": "Candidate"
+    }
+  },
+  {
+    "id": "EML-1007",
+    "template_key": "interview_invite",
+    "recipient_email": "corrected-applicant@bracu.ac.bd",
+    "recipient_name": "Failed Delivery Test",
+    "subject": "Interview Scheduled: {{job_title}} at HireIQ Systems [CONFIRMED]",
+    "body_html": "<p>Updated interview body for Failed Delivery Test.</p>",
+    "status": "Sent",
+    "attempts": 4,
+    "max_attempts": 3,
+    "error_message": null,
+    "sent_at": "2026-11-16T14:22:35.465Z",
+    "created_at": "2026-11-16T14:22:35.300Z",
+    "metadata": {
+      "is_test_dispatch": true,
+      "template_name": "Interview Invitation",
+      "category": "Interviews"
+    }
+  },
+  {
+    "id": "EML-1008",
+    "template_key": "weekly_hr_digest",
+    "recipient_email": "hr-head@bracu.ac.bd",
+    "recipient_name": "Director of HR",
+    "subject": "HireIQ Weekly Recruitment Digest - 2026-W3",
+    "body_html": "<div style=\"font-family: Arial, sans-serif; max-width: 650px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;\">\n  <div style=\"border-bottom: 2px solid #2563eb; padding-bottom: 12px; margin-bottom: 20px;\">\n    <h2 style=\"color: #1e3a8a; margin: 0;\">HireIQ Weekly Executive Digest</h2>\n    <p style=\"color: #64748b; margin: 4px 0 0 0; font-size: 14px;\">Week of: <strong>2026-W3</strong></p>\n  </div>\n  <p>Hello <strong>Director of HR</strong>,</p>\n  <p>Here is your weekly summary of recruitment activities, pipeline progress, and key metrics across all departments:</p>\n  <table style=\"width: 100%; border-collapse: collapse; margin: 20px 0;\">\n    <tr style=\"background: #f8fafc;\">\n      <th style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: left;\">Metric</th>\n      <th style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right;\">Count</th>\n    </tr>\n    <tr><td style=\"padding: 10px; border: 1px solid #e2e8f0;\">Active Job Openings</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold;\">2</td></tr>\n    <tr><td style=\"padding: 10px; border: 1px solid #e2e8f0;\">New Applications Received</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold;\">18</td></tr>\n    <tr><td style=\"padding: 10px; border: 1px solid #e2e8f0;\">Interviews Conducted/Scheduled</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold;\">7</td></tr>\n    <tr><td style=\"padding: 10px; border: 1px solid #e2e8f0;\">Offers Out / Pending Response</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold;\">3</td></tr>\n    <tr style=\"background: #f0fdf4;\"><td style=\"padding: 10px; border: 1px solid #e2e8f0; color: #166534; font-weight: bold;\">Offers Accepted / Hires</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold; color: #166534;\">2</td></tr>\n  </table>\n  <div style=\"background: #f1f5f9; padding: 14px; border-radius: 6px; font-size: 14px;\">\n    <strong>Highlights & Key Observations:</strong>\n    <p style=\"margin: 6px 0 0 0;\">Currently 2 active job postings across departments. 0 posting(s) expiring within 7 days. Pipeline throughput is steady with 7 interviews planned this week.</p>\n  </div>\n  <p style=\"color: #64748b; font-size: 13px; margin-top: 24px;\">Automated by HireIQ Notification Engine (Sprint 1 - Mehrab Arefin).</p>\n</div>",
+    "status": "Sent",
+    "attempts": 1,
+    "max_attempts": 3,
+    "error_message": null,
+    "sent_at": "2026-11-16T14:22:35.471Z",
+    "created_at": "2026-11-16T14:22:35.469Z",
+    "metadata": {
+      "system_generated": true,
+      "report_type": "weekly_digest",
+      "template_name": "Weekly HR Recruitment Digest",
+      "category": "HR Digest"
+    }
+  },
+  {
+    "id": "EML-1009",
+    "template_key": "candidate_shortlisted",
+    "recipient_email": "siam@bracu.ac.bd",
+    "recipient_name": "Tariqul Islam Siam",
+    "subject": "Great News! You've been shortlisted for AI Research Engineer at HireIQ Systems",
+    "body_html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;\">\n  <div style=\"text-align: center; margin-bottom: 24px;\">\n    <h2 style=\"color: #047857; margin: 0;\">HireIQ Shortlisting Alert</h2>\n  </div>\n  <p>Dear <strong>Tariqul Islam Siam</strong>,</p>\n  <p>We are delighted to inform you that following our initial evaluation, your profile has been <strong>shortlisted</strong> for the position of <strong>AI Research Engineer</strong> at <strong>HireIQ Systems</strong>!</p>\n  <div style=\"background-color: #ecfdf5; border-left: 4px solid #10b981; padding: 16px; margin: 20px 0;\">\n    <p style=\"margin: 0; color: #065f46; font-size: 14px;\"><strong>Match Assessment:</strong> High compatibility (Competency Score: 94%). Your background and skill set stand out among our applicant pool.</p>\n  </div>\n  <p><strong>Next Steps:</strong></p>\n  <p>Initial technical screening round with the engineering lead.</p>\n  <p>Our scheduling coordinator will contact you shortly with interview details.</p>\n  <p style=\"color: #64748b; font-size: 13px; margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 16px;\">Warm regards,<br>Hiring Committee<br><strong>HireIQ Systems</strong></p>\n</div>",
+    "status": "Queued",
+    "attempts": 0,
+    "max_attempts": 3,
+    "error_message": null,
+    "sent_at": null,
+    "created_at": "2026-11-16T14:22:35.473Z",
+    "metadata": {
+      "event": "candidate_shortlisted",
+      "template_name": "Candidate Shortlisted",
+      "category": "Candidate"
+    }
+  },
+  {
+    "id": "EML-1010",
+    "template_key": "application_received",
+    "recipient_email": "candidate.student@bracu.ac.bd",
+    "recipient_name": "Sadia Sultana",
+    "subject": "Application Received: {{job_title}} at HireIQ Systems",
+    "body_html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;\">\n  <div style=\"text-align: center; margin-bottom: 24px;\">\n    <h2 style=\"color: #1e3a8a; margin: 0;\">HireIQ Recruitment</h2>\n    <p style=\"color: #64748b; margin: 4px 0 0 0; font-size: 14px;\">Candidate Notification System</p>\n  </div>\n  <p>Dear <strong>Sadia Sultana</strong>,</p>\n  <p>Thank you for applying for the position of <strong>{{job_title}}</strong> at <strong>HireIQ Systems</strong>.</p>\n  <p>We have successfully received your application (Application ID: <code>{{application_id}}</code>). Our recruitment team is currently reviewing your profile and credentials.</p>\n  <div style=\"background-color: #f1f5f9; padding: 16px; border-radius: 6px; margin: 20px 0;\">\n    <p style=\"margin: 0; font-size: 14px; color: #334155;\"><strong>What happens next?</strong><br>Our hiring team and automated matching engine will evaluate your qualifications against the role requirements. If your profile matches, we will reach out regarding the next steps in our hiring process.</p>\n  </div>\n  <p>You can track the live status of your application anytime by visiting your candidate portal:</p>\n  <div style=\"text-align: center; margin: 24px 0;\">\n    <a href=\"https://hireiq.careers/status\" style=\"background-color: #2563eb; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;\">View Application Status</a>\n  </div>\n  <p style=\"color: #64748b; font-size: 13px; margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 16px;\">Best regards,<br>Talent Acquisition Team<br><strong>HireIQ Systems</strong></p>\n</div>",
+    "status": "Sent",
+    "attempts": 1,
+    "max_attempts": 3,
+    "error_message": null,
+    "sent_at": "2026-11-16T14:25:27.051Z",
+    "created_at": "2026-11-16T14:25:27.049Z",
+    "metadata": {
+      "is_test_dispatch": true,
+      "template_name": "Application Confirmation",
+      "category": "Candidate"
+    }
+  },
+  {
+    "id": "EML-1011",
+    "template_key": "interview_invite",
+    "recipient_email": "corrected-applicant@bracu.ac.bd",
+    "recipient_name": "Failed Delivery Test",
+    "subject": "Interview Scheduled: {{job_title}} at HireIQ Systems [CONFIRMED]",
+    "body_html": "<p>Updated interview body for Failed Delivery Test.</p>",
+    "status": "Sent",
+    "attempts": 4,
+    "max_attempts": 3,
+    "error_message": null,
+    "sent_at": "2026-11-16T14:25:27.378Z",
+    "created_at": "2026-11-16T14:25:27.208Z",
+    "metadata": {
+      "is_test_dispatch": true,
+      "template_name": "Interview Invitation",
+      "category": "Interviews"
+    }
+  },
+  {
+    "id": "EML-1012",
+    "template_key": "weekly_hr_digest",
+    "recipient_email": "hr-head@bracu.ac.bd",
+    "recipient_name": "Director of HR",
+    "subject": "HireIQ Weekly Recruitment Digest - 2026-W3",
+    "body_html": "<div style=\"font-family: Arial, sans-serif; max-width: 650px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;\">\n  <div style=\"border-bottom: 2px solid #2563eb; padding-bottom: 12px; margin-bottom: 20px;\">\n    <h2 style=\"color: #1e3a8a; margin: 0;\">HireIQ Weekly Executive Digest</h2>\n    <p style=\"color: #64748b; margin: 4px 0 0 0; font-size: 14px;\">Week of: <strong>2026-W3</strong></p>\n  </div>\n  <p>Hello <strong>Director of HR</strong>,</p>\n  <p>Here is your weekly summary of recruitment activities, pipeline progress, and key metrics across all departments:</p>\n  <table style=\"width: 100%; border-collapse: collapse; margin: 20px 0;\">\n    <tr style=\"background: #f8fafc;\">\n      <th style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: left;\">Metric</th>\n      <th style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right;\">Count</th>\n    </tr>\n    <tr><td style=\"padding: 10px; border: 1px solid #e2e8f0;\">Active Job Openings</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold;\">2</td></tr>\n    <tr><td style=\"padding: 10px; border: 1px solid #e2e8f0;\">New Applications Received</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold;\">18</td></tr>\n    <tr><td style=\"padding: 10px; border: 1px solid #e2e8f0;\">Interviews Conducted/Scheduled</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold;\">7</td></tr>\n    <tr><td style=\"padding: 10px; border: 1px solid #e2e8f0;\">Offers Out / Pending Response</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold;\">3</td></tr>\n    <tr style=\"background: #f0fdf4;\"><td style=\"padding: 10px; border: 1px solid #e2e8f0; color: #166534; font-weight: bold;\">Offers Accepted / Hires</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold; color: #166534;\">2</td></tr>\n  </table>\n  <div style=\"background: #f1f5f9; padding: 14px; border-radius: 6px; font-size: 14px;\">\n    <strong>Highlights & Key Observations:</strong>\n    <p style=\"margin: 6px 0 0 0;\">Currently 2 active job postings across departments. 0 posting(s) expiring within 7 days. Pipeline throughput is steady with 7 interviews planned this week.</p>\n  </div>\n  <p style=\"color: #64748b; font-size: 13px; margin-top: 24px;\">Automated by HireIQ Notification Engine (Sprint 1 - Mehrab Arefin).</p>\n</div>",
+    "status": "Sent",
+    "attempts": 1,
+    "max_attempts": 3,
+    "error_message": null,
+    "sent_at": "2026-11-16T14:25:27.384Z",
+    "created_at": "2026-11-16T14:25:27.382Z",
+    "metadata": {
+      "system_generated": true,
+      "report_type": "weekly_digest",
+      "template_name": "Weekly HR Recruitment Digest",
+      "category": "HR Digest"
+    }
+  },
+  {
+    "id": "EML-1013",
+    "template_key": "candidate_shortlisted",
+    "recipient_email": "siam@bracu.ac.bd",
+    "recipient_name": "Tariqul Islam Siam",
+    "subject": "Great News! You've been shortlisted for AI Research Engineer at HireIQ Systems",
+    "body_html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;\">\n  <div style=\"text-align: center; margin-bottom: 24px;\">\n    <h2 style=\"color: #047857; margin: 0;\">HireIQ Shortlisting Alert</h2>\n  </div>\n  <p>Dear <strong>Tariqul Islam Siam</strong>,</p>\n  <p>We are delighted to inform you that following our initial evaluation, your profile has been <strong>shortlisted</strong> for the position of <strong>AI Research Engineer</strong> at <strong>HireIQ Systems</strong>!</p>\n  <div style=\"background-color: #ecfdf5; border-left: 4px solid #10b981; padding: 16px; margin: 20px 0;\">\n    <p style=\"margin: 0; color: #065f46; font-size: 14px;\"><strong>Match Assessment:</strong> High compatibility (Competency Score: 94%). Your background and skill set stand out among our applicant pool.</p>\n  </div>\n  <p><strong>Next Steps:</strong></p>\n  <p>Initial technical screening round with the engineering lead.</p>\n  <p>Our scheduling coordinator will contact you shortly with interview details.</p>\n  <p style=\"color: #64748b; font-size: 13px; margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 16px;\">Warm regards,<br>Hiring Committee<br><strong>HireIQ Systems</strong></p>\n</div>",
+    "status": "Queued",
+    "attempts": 0,
+    "max_attempts": 3,
+    "error_message": null,
+    "sent_at": null,
+    "created_at": "2026-11-16T14:25:27.385Z",
+    "metadata": {
+      "event": "candidate_shortlisted",
+      "template_name": "Candidate Shortlisted",
+      "category": "Candidate"
+    }
+  },
+  {
+    "id": "EML-1014",
+    "template_key": "application_received",
+    "recipient_email": "candidate.student@bracu.ac.bd",
+    "recipient_name": "Sadia Sultana",
+    "subject": "Application Received: {{job_title}} at HireIQ Systems",
+    "body_html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;\">\n  <div style=\"text-align: center; margin-bottom: 24px;\">\n    <h2 style=\"color: #1e3a8a; margin: 0;\">HireIQ Recruitment</h2>\n    <p style=\"color: #64748b; margin: 4px 0 0 0; font-size: 14px;\">Candidate Notification System</p>\n  </div>\n  <p>Dear <strong>Sadia Sultana</strong>,</p>\n  <p>Thank you for applying for the position of <strong>{{job_title}}</strong> at <strong>HireIQ Systems</strong>.</p>\n  <p>We have successfully received your application (Application ID: <code>{{application_id}}</code>). Our recruitment team is currently reviewing your profile and credentials.</p>\n  <div style=\"background-color: #f1f5f9; padding: 16px; border-radius: 6px; margin: 20px 0;\">\n    <p style=\"margin: 0; font-size: 14px; color: #334155;\"><strong>What happens next?</strong><br>Our hiring team and automated matching engine will evaluate your qualifications against the role requirements. If your profile matches, we will reach out regarding the next steps in our hiring process.</p>\n  </div>\n  <p>You can track the live status of your application anytime by visiting your candidate portal:</p>\n  <div style=\"text-align: center; margin: 24px 0;\">\n    <a href=\"https://hireiq.careers/status\" style=\"background-color: #2563eb; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;\">View Application Status</a>\n  </div>\n  <p style=\"color: #64748b; font-size: 13px; margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 16px;\">Best regards,<br>Talent Acquisition Team<br><strong>HireIQ Systems</strong></p>\n</div>",
+    "status": "Sent",
+    "attempts": 1,
+    "max_attempts": 3,
+    "error_message": null,
+    "sent_at": "2026-11-16T14:26:47.056Z",
+    "created_at": "2026-11-16T14:26:47.053Z",
+    "metadata": {
+      "is_test_dispatch": true,
+      "template_name": "Application Confirmation",
+      "category": "Candidate"
+    }
+  },
+  {
+    "id": "EML-1015",
+    "template_key": "interview_invite",
+    "recipient_email": "corrected-applicant@bracu.ac.bd",
+    "recipient_name": "Failed Delivery Test",
+    "subject": "Interview Scheduled: {{job_title}} at HireIQ Systems [CONFIRMED]",
+    "body_html": "<p>Updated interview body for Failed Delivery Test.</p>",
+    "status": "Sent",
+    "attempts": 4,
+    "max_attempts": 3,
+    "error_message": null,
+    "sent_at": "2026-11-16T14:26:47.385Z",
+    "created_at": "2026-11-16T14:26:47.215Z",
+    "metadata": {
+      "is_test_dispatch": true,
+      "template_name": "Interview Invitation",
+      "category": "Interviews"
+    }
+  },
+  {
+    "id": "EML-1016",
+    "template_key": "weekly_hr_digest",
+    "recipient_email": "hr-head@bracu.ac.bd",
+    "recipient_name": "Director of HR",
+    "subject": "HireIQ Weekly Recruitment Digest - 2026-W3",
+    "body_html": "<div style=\"font-family: Arial, sans-serif; max-width: 650px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;\">\n  <div style=\"border-bottom: 2px solid #2563eb; padding-bottom: 12px; margin-bottom: 20px;\">\n    <h2 style=\"color: #1e3a8a; margin: 0;\">HireIQ Weekly Executive Digest</h2>\n    <p style=\"color: #64748b; margin: 4px 0 0 0; font-size: 14px;\">Week of: <strong>2026-W3</strong></p>\n  </div>\n  <p>Hello <strong>Director of HR</strong>,</p>\n  <p>Here is your weekly summary of recruitment activities, pipeline progress, and key metrics across all departments:</p>\n  <table style=\"width: 100%; border-collapse: collapse; margin: 20px 0;\">\n    <tr style=\"background: #f8fafc;\">\n      <th style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: left;\">Metric</th>\n      <th style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right;\">Count</th>\n    </tr>\n    <tr><td style=\"padding: 10px; border: 1px solid #e2e8f0;\">Active Job Openings</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold;\">2</td></tr>\n    <tr><td style=\"padding: 10px; border: 1px solid #e2e8f0;\">New Applications Received</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold;\">18</td></tr>\n    <tr><td style=\"padding: 10px; border: 1px solid #e2e8f0;\">Interviews Conducted/Scheduled</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold;\">7</td></tr>\n    <tr><td style=\"padding: 10px; border: 1px solid #e2e8f0;\">Offers Out / Pending Response</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold;\">3</td></tr>\n    <tr style=\"background: #f0fdf4;\"><td style=\"padding: 10px; border: 1px solid #e2e8f0; color: #166534; font-weight: bold;\">Offers Accepted / Hires</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold; color: #166534;\">2</td></tr>\n  </table>\n  <div style=\"background: #f1f5f9; padding: 14px; border-radius: 6px; font-size: 14px;\">\n    <strong>Highlights & Key Observations:</strong>\n    <p style=\"margin: 6px 0 0 0;\">Currently 2 active job postings across departments. 0 posting(s) expiring within 7 days. Pipeline throughput is steady with 7 interviews planned this week.</p>\n  </div>\n  <p style=\"color: #64748b; font-size: 13px; margin-top: 24px;\">Automated by HireIQ Notification Engine (Sprint 1 - Mehrab Arefin).</p>\n</div>",
+    "status": "Sent",
+    "attempts": 1,
+    "max_attempts": 3,
+    "error_message": null,
+    "sent_at": "2026-11-16T14:26:47.393Z",
+    "created_at": "2026-11-16T14:26:47.391Z",
+    "metadata": {
+      "system_generated": true,
+      "report_type": "weekly_digest",
+      "template_name": "Weekly HR Recruitment Digest",
+      "category": "HR Digest"
+    }
+  },
+  {
+    "id": "EML-1017",
+    "template_key": "candidate_shortlisted",
+    "recipient_email": "siam@bracu.ac.bd",
+    "recipient_name": "Tariqul Islam Siam",
+    "subject": "Great News! You've been shortlisted for AI Research Engineer at HireIQ Systems",
+    "body_html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;\">\n  <div style=\"text-align: center; margin-bottom: 24px;\">\n    <h2 style=\"color: #047857; margin: 0;\">HireIQ Shortlisting Alert</h2>\n  </div>\n  <p>Dear <strong>Tariqul Islam Siam</strong>,</p>\n  <p>We are delighted to inform you that following our initial evaluation, your profile has been <strong>shortlisted</strong> for the position of <strong>AI Research Engineer</strong> at <strong>HireIQ Systems</strong>!</p>\n  <div style=\"background-color: #ecfdf5; border-left: 4px solid #10b981; padding: 16px; margin: 20px 0;\">\n    <p style=\"margin: 0; color: #065f46; font-size: 14px;\"><strong>Match Assessment:</strong> High compatibility (Competency Score: 94%). Your background and skill set stand out among our applicant pool.</p>\n  </div>\n  <p><strong>Next Steps:</strong></p>\n  <p>Initial technical screening round with the engineering lead.</p>\n  <p>Our scheduling coordinator will contact you shortly with interview details.</p>\n  <p style=\"color: #64748b; font-size: 13px; margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 16px;\">Warm regards,<br>Hiring Committee<br><strong>HireIQ Systems</strong></p>\n</div>",
+    "status": "Queued",
+    "attempts": 0,
+    "max_attempts": 3,
+    "error_message": null,
+    "sent_at": null,
+    "created_at": "2026-11-16T14:26:47.394Z",
+    "metadata": {
+      "event": "candidate_shortlisted",
+      "template_name": "Candidate Shortlisted",
+      "category": "Candidate"
+    }
+  }
+]

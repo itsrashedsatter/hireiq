@@ -5,17 +5,27 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "test": "node test/test_f2.js && node test/test_f13.js",
+    "test:f2": "node test/test_f2.js",
+    "test:f13": "node test/test_f13.js"
   },
   "keywords": [
     "recruitment",
     "ats",
     "applicant-tracking",
     "job-posting",
+    "email-notifications",
+    "queue",
     "mvc",
     "cse470"
   ],
-  "author": "Rashed Satter (24241101)",
+  "authors": [
+    "Rashed Satter (24241101) - Member 4",
+    "Mehrab Arefin (22301510) - Member 3",
+    "Saad Bin Shadi Srabon (24301191) - Member 1",
+    "M M Tariqul Islam Siam (23101118) - Member 2"
+  ],
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",

@@ -1,0 +1,140 @@
+[
+  {
+    "id": "TPL-001",
+    "key": "application_received",
+    "name": "Application Confirmation",
+    "category": "Candidate",
+    "subject": "Application Received: {{job_title}} at {{company_name}}",
+    "placeholders": [
+      "candidate_name",
+      "job_title",
+      "company_name",
+      "application_id",
+      "portal_url"
+    ],
+    "body_html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;\">\n  <div style=\"text-align: center; margin-bottom: 24px;\">\n    <h2 style=\"color: #1e3a8a; margin: 0;\">HireIQ Recruitment</h2>\n    <p style=\"color: #64748b; margin: 4px 0 0 0; font-size: 14px;\">Candidate Notification System</p>\n  </div>\n  <p>Dear <strong>{{candidate_name}}</strong>,</p>\n  <p>Thank you for applying for the position of <strong>{{job_title}}</strong> at <strong>{{company_name}}</strong>.</p>\n  <p>We have successfully received your application (Application ID: <code>{{application_id}}</code>). Our recruitment team is currently reviewing your profile and credentials.</p>\n  <div style=\"background-color: #f1f5f9; padding: 16px; border-radius: 6px; margin: 20px 0;\">\n    <p style=\"margin: 0; font-size: 14px; color: #334155;\"><strong>What happens next?</strong><br>Our hiring team and automated matching engine will evaluate your qualifications against the role requirements. If your profile matches, we will reach out regarding the next steps in our hiring process.</p>\n  </div>\n  <p>You can track the live status of your application anytime by visiting your candidate portal:</p>\n  <div style=\"text-align: center; margin: 24px 0;\">\n    <a href=\"{{portal_url}}\" style=\"background-color: #2563eb; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;\">View Application Status</a>\n  </div>\n  <p style=\"color: #64748b; font-size: 13px; margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 16px;\">Best regards,<br>Talent Acquisition Team<br><strong>{{company_name}}</strong></p>\n</div>",
+    "updated_at": "2026-11-16T12:00:00.000Z"
+  },
+  {
+    "id": "TPL-002",
+    "key": "candidate_shortlisted",
+    "name": "Candidate Shortlisted",
+    "category": "Candidate",
+    "subject": "Great News! You've been shortlisted for {{job_title}} at {{company_name}}",
+    "placeholders": [
+      "candidate_name",
+      "job_title",
+      "company_name",
+      "match_score",
+      "next_steps"
+    ],
+    "body_html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;\">\n  <div style=\"text-align: center; margin-bottom: 24px;\">\n    <h2 style=\"color: #047857; margin: 0;\">HireIQ Shortlisting Alert</h2>\n  </div>\n  <p>Dear <strong>{{candidate_name}}</strong>,</p>\n  <p>We are delighted to inform you that following our initial evaluation, your profile has been <strong>shortlisted</strong> for the position of <strong>{{job_title}}</strong> at <strong>{{company_name}}</strong>!</p>\n  <div style=\"background-color: #ecfdf5; border-left: 4px solid #10b981; padding: 16px; margin: 20px 0;\">\n    <p style=\"margin: 0; color: #065f46; font-size: 14px;\"><strong>Match Assessment:</strong> High compatibility (Competency Score: {{match_score}}%). Your background and skill set stand out among our applicant pool.</p>\n  </div>\n  <p><strong>Next Steps:</strong></p>\n  <p>{{next_steps}}</p>\n  <p>Our scheduling coordinator will contact you shortly with interview details.</p>\n  <p style=\"color: #64748b; font-size: 13px; margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 16px;\">Warm regards,<br>Hiring Committee<br><strong>{{company_name}}</strong></p>\n</div>",
+    "updated_at": "2026-11-16T12:00:00.000Z"
+  },
+  {
+    "id": "TPL-003",
+    "key": "interview_invite",
+    "name": "Interview Invitation",
+    "category": "Interviews",
+    "subject": "Interview Scheduled: {{job_title}} at {{company_name}} [CONFIRMED]",
+    "placeholders": [
+      "candidate_name",
+      "job_title",
+      "company_name",
+      "interview_round",
+      "interview_date",
+      "interview_time",
+      "interview_mode",
+      "meeting_link",
+      "panel_members"
+    ],
+    "body_html": "<p>Updated interview body for {{candidate_name}}.</p>",
+    "updated_at": "2026-11-16T14:26:47.051Z"
+  },
+  {
+    "id": "TPL-004",
+    "key": "interview_updated",
+    "name": "Interview Rescheduled / Updated",
+    "category": "Interviews",
+    "subject": "RESCHEDULED: Interview for {{job_title}} at {{company_name}}",
+    "placeholders": [
+      "candidate_name",
+      "job_title",
+      "company_name",
+      "new_date",
+      "new_time",
+      "reason",
+      "meeting_link"
+    ],
+    "body_html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;\">\n  <h3 style=\"color: #d97706; margin-top: 0;\">Interview Schedule Update</h3>\n  <p>Dear <strong>{{candidate_name}}</strong>,</p>\n  <p>Please note that your upcoming interview for <strong>{{job_title}}</strong> has been updated to the following schedule:</p>\n  <div style=\"background: #fffbeb; border: 1px solid #fde68a; padding: 16px; border-radius: 6px; margin: 16px 0;\">\n    <p style=\"margin: 4px 0;\"><strong>New Date:</strong> {{new_date}}</p>\n    <p style=\"margin: 4px 0;\"><strong>New Time:</strong> {{new_time}}</p>\n    <p style=\"margin: 4px 0;\"><strong>Reason:</strong> {{reason}}</p>\n  </div>\n  <p>Meeting link: <a href=\"{{meeting_link}}\">{{meeting_link}}</a></p>\n  <p>We apologize for any inconvenience caused.</p>\n</div>",
+    "updated_at": "2026-11-16T12:00:00.000Z"
+  },
+  {
+    "id": "TPL-005",
+    "key": "candidate_rejected",
+    "name": "Candidate Rejection Notice",
+    "category": "Candidate",
+    "subject": "Application Update: {{job_title}} at {{company_name}}",
+    "placeholders": [
+      "candidate_name",
+      "job_title",
+      "company_name",
+      "feedback_notes"
+    ],
+    "body_html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;\">\n  <p>Dear <strong>{{candidate_name}}</strong>,</p>\n  <p>Thank you very much for taking the time to apply and interview for the <strong>{{job_title}}</strong> role at <strong>{{company_name}}</strong>.</p>\n  <p>After careful deliberation, we have decided to move forward with another applicant whose specific experience aligns more closely with our immediate requirements.</p>\n  <p>{{feedback_notes}}</p>\n  <p>With your permission, we would love to keep your profile in our <strong>Talent Pool</strong> for consideration when matching opportunities open in the future.</p>\n  <p>We wish you the very best in your professional journey.</p>\n  <p style=\"color: #64748b; font-size: 13px; margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 16px;\">Sincerely,<br>Talent Acquisition Team<br><strong>{{company_name}}</strong></p>\n</div>",
+    "updated_at": "2026-11-16T12:00:00.000Z"
+  },
+  {
+    "id": "TPL-006",
+    "key": "offer_letter",
+    "name": "Formal Offer of Employment",
+    "category": "Offers",
+    "subject": "Formal Offer of Employment: {{job_title}} at {{company_name}}",
+    "placeholders": [
+      "candidate_name",
+      "job_title",
+      "company_name",
+      "salary",
+      "start_date",
+      "offer_expiry",
+      "offer_link"
+    ],
+    "body_html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;\">\n  <div style=\"text-align: center; margin-bottom: 24px;\">\n    <h2 style=\"color: #1e3a8a; margin: 0;\">HireIQ Official Employment Offer</h2>\n  </div>\n  <p>Dear <strong>{{candidate_name}}</strong>,</p>\n  <p>On behalf of <strong>{{company_name}}</strong>, we are thrilled to offer you the position of <strong>{{job_title}}</strong>!</p>\n  <div style=\"background-color: #f8fafc; border: 1px solid #cbd5e1; padding: 18px; border-radius: 6px; margin: 20px 0;\">\n    <h4 style=\"margin-top: 0; color: #0f172a;\">Offer Summary</h4>\n    <p style=\"margin: 6px 0;\"><strong>Position:</strong> {{job_title}}</p>\n    <p style=\"margin: 6px 0;\"><strong>Compensation:</strong> {{salary}}</p>\n    <p style=\"margin: 6px 0;\"><strong>Anticipated Start Date:</strong> {{start_date}}</p>\n    <p style=\"margin: 6px 0; color: #dc2626;\"><strong>Offer Expiry Date:</strong> {{offer_expiry}}</p>\n  </div>\n  <p>Please review your complete formal contract and accept or decline online through our secure candidate portal:</p>\n  <div style=\"text-align: center; margin: 24px 0;\">\n    <a href=\"{{offer_link}}\" style=\"background-color: #10b981; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 15px; display: inline-block;\">Review & Respond to Offer</a>\n  </div>\n  <p style=\"font-size: 13px; color: #64748b;\">We look forward to welcoming you to our team.</p>\n</div>",
+    "updated_at": "2026-11-16T12:00:00.000Z"
+  },
+  {
+    "id": "TPL-007",
+    "key": "candidate_hired",
+    "name": "Welcome New Hire Onboarding",
+    "category": "Onboarding",
+    "subject": "Welcome to the Team, {{candidate_name}}! Onboarding Information",
+    "placeholders": [
+      "candidate_name",
+      "job_title",
+      "company_name",
+      "start_date",
+      "manager_name"
+    ],
+    "body_html": "<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;\">\n  <h2 style=\"color: #2563eb; margin: 0;\">Welcome to {{company_name}}! 🎉</h2>\n  <p>Dear <strong>{{candidate_name}}</strong>,</p>\n  <p>We are excited to have you join us as our newest <strong>{{job_title}}</strong> starting on <strong>{{start_date}}</strong>.</p>\n  <p>Your reporting manager is <strong>{{manager_name}}</strong>. Our HR team will reach out with your welcome kit, workplace accounts, and first-day orientation schedule.</p>\n  <p>Welcome aboard!</p>\n</div>",
+    "updated_at": "2026-11-16T12:00:00.000Z"
+  },
+  {
+    "id": "TPL-008",
+    "key": "weekly_hr_digest",
+    "name": "Weekly HR Recruitment Digest",
+    "category": "HR Digest",
+    "subject": "HireIQ Weekly Recruitment Digest - {{report_week}}",
+    "placeholders": [
+      "recipient_name",
+      "report_week",
+      "active_jobs_count",
+      "new_applications_count",
+      "interviews_scheduled_count",
+      "offers_pending_count",
+      "offers_accepted_count",
+      "summary_highlights"
+    ],
+    "body_html": "<div style=\"font-family: Arial, sans-serif; max-width: 650px; margin: 0 auto; padding: 24px; border: 1px solid #e2e8f0; border-radius: 8px; background-color: #ffffff;\">\n  <div style=\"border-bottom: 2px solid #2563eb; padding-bottom: 12px; margin-bottom: 20px;\">\n    <h2 style=\"color: #1e3a8a; margin: 0;\">HireIQ Weekly Executive Digest</h2>\n    <p style=\"color: #64748b; margin: 4px 0 0 0; font-size: 14px;\">Week of: <strong>{{report_week}}</strong></p>\n  </div>\n  <p>Hello <strong>{{recipient_name}}</strong>,</p>\n  <p>Here is your weekly summary of recruitment activities, pipeline progress, and key metrics across all departments:</p>\n  <table style=\"width: 100%; border-collapse: collapse; margin: 20px 0;\">\n    <tr style=\"background: #f8fafc;\">\n      <th style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: left;\">Metric</th>\n      <th style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right;\">Count</th>\n    </tr>\n    <tr><td style=\"padding: 10px; border: 1px solid #e2e8f0;\">Active Job Openings</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold;\">{{active_jobs_count}}</td></tr>\n    <tr><td style=\"padding: 10px; border: 1px solid #e2e8f0;\">New Applications Received</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold;\">{{new_applications_count}}</td></tr>\n    <tr><td style=\"padding: 10px; border: 1px solid #e2e8f0;\">Interviews Conducted/Scheduled</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold;\">{{interviews_scheduled_count}}</td></tr>\n    <tr><td style=\"padding: 10px; border: 1px solid #e2e8f0;\">Offers Out / Pending Response</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold;\">{{offers_pending_count}}</td></tr>\n    <tr style=\"background: #f0fdf4;\"><td style=\"padding: 10px; border: 1px solid #e2e8f0; color: #166534; font-weight: bold;\">Offers Accepted / Hires</td><td style=\"padding: 10px; border: 1px solid #e2e8f0; text-align: right; font-weight: bold; color: #166534;\">{{offers_accepted_count}}</td></tr>\n  </table>\n  <div style=\"background: #f1f5f9; padding: 14px; border-radius: 6px; font-size: 14px;\">\n    <strong>Highlights & Key Observations:</strong>\n    <p style=\"margin: 6px 0 0 0;\">{{summary_highlights}}</p>\n  </div>\n  <p style=\"color: #64748b; font-size: 13px; margin-top: 24px;\">Automated by HireIQ Notification Engine (Sprint 1 - Mehrab Arefin).</p>\n</div>",
+    "updated_at": "2026-11-16T12:00:00.000Z"
+  }
+]
