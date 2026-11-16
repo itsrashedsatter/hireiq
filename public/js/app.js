@@ -181,10 +181,32 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('jobTitle').value = req.title;
       document.getElementById('jobDepartment').value = req.department;
       document.getElementById('jobSalary').value = req.budget_range;
-      if (!document.getElementById('jobDescription').value) {
-        document.getElementById('jobDescription').value = `Vacancy for approved requisition ${req.id}. ${req.justification}`;
+      document.getElementById('jobDescription').value = `Vacancy for approved requisition ${req.id}. ${req.justification}`;
+      
+      // Auto-suggest skills for this requisition
+      skillsContainer.innerHTML = '';
+      if (req.id === 'REQ-101') {
+        addSkillRow('Node.js & Express', 5);
+        addSkillRow('React & Frontend Architecture', 4);
+        addSkillRow('Database Systems (SQL)', 4);
+      } else if (req.id === 'REQ-102') {
+        addSkillRow('Figma & Design Systems', 5);
+        addSkillRow('User Research & Usability Testing', 4);
+        addSkillRow('Prototyping & Wireframing', 4);
+      } else if (req.id === 'REQ-103') {
+        addSkillRow('Python & Machine Learning', 5);
+        addSkillRow('NLP & Text Extraction', 5);
+        addSkillRow('Scikit-Learn / PyTorch', 4);
+      } else if (req.id === 'REQ-104') {
+        addSkillRow('Technical Talent Sourcing', 5);
+        addSkillRow('Candidate Screening & Interviews', 4);
+        addSkillRow('ATS Management', 3);
+      } else {
+        addSkillRow('Core Technical Competency', 5);
+        addSkillRow('Communication & Teamwork', 4);
       }
-      showToast(`Auto-filled details from Requisition ${req.id}`, 'info');
+
+      showToast(`Auto-filled Title, Dept, Budget, & Skills from ${req.id}`, 'info');
     }
   }
 
@@ -524,9 +546,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('editJobId').value = '';
     skillsContainer.innerHTML = '';
     
-    // Add 2 default skill rows
-    addSkillRow('', 5);
-    addSkillRow('', 4);
+    // Add default skills so user can immediately save or customize
+    addSkillRow('Communication & Problem Solving', 4);
+    addSkillRow('Technical Proficiency', 5);
 
     // Set default deadline to +14 days from today
     const d = new Date();
@@ -561,7 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (job.skills && job.skills.length > 0) {
         job.skills.forEach(s => addSkillRow(s.skill_name, s.weight));
       } else {
-        addSkillRow('', 3);
+        addSkillRow('Role Technical Competencies', 4);
       }
 
       openModal(postingModal);
@@ -574,7 +596,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const row = document.createElement('div');
     row.className = 'skill-row';
     row.innerHTML = `
-      <input type="text" class="form-input skill-name-input" placeholder="e.g. Node.js, System Design" value="${escapeHtml(name)}" required />
+      <input type="text" class="form-input skill-name-input" placeholder="e.g. Node.js, System Design" value="${escapeHtml(name)}" />
       <select class="form-select skill-weight-select">
         <option value="1" ${weight == 1 ? 'selected' : ''}>Weight 1 (Basic / Nice to have)</option>
         <option value="2" ${weight == 2 ? 'selected' : ''}>Weight 2 (Familiar)</option>
@@ -586,11 +608,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     row.querySelector('.btn-remove-skill').addEventListener('click', () => {
-      if (skillsContainer.querySelectorAll('.skill-row').length > 1) {
-        row.remove();
-      } else {
-        showToast('At least one skill requirement is recommended', 'warning');
-      }
+      row.remove();
     });
 
     skillsContainer.appendChild(row);
@@ -606,11 +624,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const skills = [];
     skillRows.forEach(row => {
       const name = row.querySelector('.skill-name-input').value.trim();
-      const weight = parseInt(row.querySelector('.skill-weight-select').value, 10);
+      const weight = parseInt(row.querySelector('.skill-weight-select').value, 10) || 3;
       if (name) {
         skills.push({ skill_name: name, weight });
       }
     });
+
+    // If no skill names were entered, provide a default
+    if (skills.length === 0) {
+      skills.push({ skill_name: 'Core Job Competencies', weight: 4 });
+    }
 
     const payload = {
       title: document.getElementById('jobTitle').value.trim(),
