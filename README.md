@@ -47,7 +47,7 @@ The platform bridges hiring managers, recruiters, interview panels, and candidat
 | 10 | **Interview Panel Scorecards & Feedback** | Multi-evaluator structured scorecards with weighted scoring; blind submission prevents peer bias. | Evaluation |
 | 11 | **Candidate Comparison & Decision Support** | Side-by-side matrix of 2–4 candidates comparing scores, skill gaps, experience, and interviewer ratings. | Decision |
 | 12 | **Offer Letter Generation & Response Tracking** | Automated PDF offer letter generation with secure signing/response link for candidates. | Offers |
-| 13 | **Automated Email Notification Engine** | Event-triggered email dispatcher via Google Apps Script for shortlisting, interview invitations, and offers. | Automation |
+| 13 | **Automated Email Notification Engine** *(Sprint 1 - Mehrab)* | Asynchronous queue-based notification dispatcher with customizable templates, variable interpolation, delivery audit trail, 1-click retry, and weekly HR digest. | Automation |
 | 14 | **Candidate Profile, Search & History** | Unified candidate profiles tracking all historical applications, timeline events, and notes. | Talent CRM |
 | 15 | **Talent Pool & Past-Candidate Re-Matching** | Archived talent pool matching previous applicants against newly published job requisitions. | Sourcing |
 | 16 | **Hiring Team Collaboration & Internal Notes** | Team comments, private notes, and @mentions on candidate files visible only to hiring stakeholders. | Collaboration |
@@ -144,6 +144,39 @@ hireiq/
 
 ---
 
+## Feature 13 (Sprint 1) Highlights: Automated Email Notification Engine
+
+**Assigned Member:** Mehrab Arefin (ID: 22301510) • Member 3
+
+1. **8 Core Recruitment Event Templates**:
+   - `application_received`: Auto-acknowledgment with application ID and tracking link.
+   - `candidate_shortlisted`: Positive notification with AI match score and next-step briefings.
+   - `interview_invite`: Structured invitation with date, time, mode, panel members, and meeting link.
+   - `interview_updated`: Rescheduling notice with modified timings and conflict notes.
+   - `candidate_rejected`: Respectful rejection notice with talent pool retention option.
+   - `offer_letter`: Formal offer notice with compensation, deadline, and secure signing URL.
+   - `candidate_hired`: Onboarding welcome notice with reporting manager attribution.
+   - `weekly_hr_digest`: High-level operational digest summarizing metrics for HR leadership.
+2. **Template Customizer & Live Variable Preview Engine**:
+   - Admins can customize email subjects and HTML bodies directly from the UI.
+   - Clickable variable pills (`{{candidate_name}}`, `{{job_title}}`, etc.) enable easy variable insertion.
+   - Live rendered preview pane renders substitutions in real time.
+3. **Asynchronous Non-Blocking Queue Processor**:
+   - Integrated in `services/emailService.js`.
+   - Incoming email requests are instantly logged as `Queued` and processed in the background without freezing caller threads.
+4. **Resilient Failure Handling & Automatic Retries**:
+   - Handles network and mailer exceptions gracefully.
+   - Re-attempts delivery up to `max_attempts = 3` before marking permanent failure.
+5. **Delivery Audit Trail & 1-Click Manual Retry**:
+   - Full transactional tracking in `email_logs.json` with delivery timestamps and error stack traces.
+   - 1-Click "Retry" button on the UI allows instant re-dispatch with optional destination correction.
+6. **Scheduled Weekly HR Digest**:
+   - Compiles live data from `JobPosting` metrics and dispatches an executive overview to HR managers.
+7. **Cross-Member Service Integration Layer**:
+   - Teammates trigger notifications via single-line helper methods (`emailService.triggerApplicationReceived({...})`).
+
+---
+
 ## Getting Started
 
 ### Prerequisites
@@ -164,15 +197,20 @@ npm start
 ```
 
 Open your browser and navigate to:
-```
-http://localhost:3000
-```
+- Recruiter Job Posting Portal: `http://localhost:3000`
+- Email Engine & Audit Dashboard: `http://localhost:3000/email-manager.html`
 
-### Running Automated Tests
+### Running Automated Verification Tests
 ```bash
+# Run both Sprint 1 feature verification test suites
+npm test
+
+# Run Feature 2 (Job Posting Management) verification
 node test/test_f2.js
+
+# Run Feature 13 (Automated Email Notification Engine) verification
+node test/test_f13.js
 ```
-The automated test suite verifies health checks, metrics, approved requisition fetching, posting creation, weighted skills persistence, search by skill, status updates, and deadline auto-close logic.
 
 ---
 
